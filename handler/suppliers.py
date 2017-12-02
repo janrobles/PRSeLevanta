@@ -15,6 +15,20 @@ class SuppliersHandler:
         result['supplocation'] = row[4]
         return result
 
+    def build_resources_dict(self,row):
+        result = {}
+        result['resourceID'] = row[0]
+        result['category'] = row[1]
+        result ['size'] = row[2]
+        result ['gender'] = row [3]
+        result ['battery_type']= row[4]
+        result ['pack_size'] = row[5]
+        result['rname'] = row[6]
+        result['qty'] = row[7]
+        result['price'] = row[8]
+        result['supplierID'] = row[9]
+        return result
+
     def getAllSuppliers(self):
         suppliers = [(1,'Juan','Del Pueblo','calle bosque','Mayaguez'),(2,'Jan','Robles','calle bosque','Bayamon')]
         result_list = []
@@ -55,3 +69,15 @@ class SuppliersHandler:
             result = self.build_suppliers_dict(row)
             result_list.append(result)
         return jsonify(Suppliers=result_list)
+
+    def getResourcesBySupplierId(self, supplierID):
+        #dao = PartsDAO()
+        resources = [(1,'Medication','Zyrtec','N/A','N/A','N/A','24','100','$3.99',1)]
+        if not resources:
+            return jsonify(Error="Part Not Found"), 404
+        resources_list = resources
+        result_list = []
+        for row in resources_list:
+            result = self.build_resources_dict(row)
+            result_list.append(result)
+        return jsonify(Resources=result_list)

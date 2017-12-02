@@ -20,6 +20,15 @@ class ResourcesHandler:
         result['supplierID'] = row[9]
         return result
 
+    def build_suppliers_dict(self,row):
+        result = {}
+        result['supplierID'] = row[0]
+        result['suppfname'] = row[1]
+        result['supplname'] = row[2]
+        result['suppaddress'] = row[3]
+        result['supplocation'] = row[4]
+        return result
+
     def getAllResources(self):
         #dao = ApplicantsDAO()
         resources = [(1,'Medication','Zyrtec','N/A','N/A','N/A','24','100','$3.99',1),(2,'Clothing','Pants','M','F','N/A','N/A','50','$0.00',2)]
@@ -29,8 +38,8 @@ class ResourcesHandler:
             result_list.append(result)
         return jsonify(Resources = result_list)
 
-    def getReourcesById(self, resourceID):
-        row = (1,'Medication','Zyrtec','N/A','N/A','N/A','24','100','$3.99',1),(2,'Clothing','Pants','M','F','N/A','N/A','50','$0.00',2)
+    def getResourcesById(self, resourceID):
+        row = (1,'Medication','Zyrtec','N/A','N/A','N/A','24','100','$3.99',1)
         if not row:
             return jsonify(Error = "Part Not Found"), 404
         else:
@@ -61,3 +70,15 @@ class ResourcesHandler:
             result = self.build_resources_dict(row)
             result_list.append(result)
         return jsonify(Resources=result_list)
+
+    def getSuppliersByResourceId(self, resourceID):
+        #dao = PartsDAO()
+        suppliers = [(1,'Juan','Del Pueblo','calle bosque','Mayaguez')]
+        if not suppliers:
+            return jsonify(Error="Part Not Found"), 404
+        suppliers_list = suppliers
+        result_list = []
+        for row in suppliers_list:
+            result = self.build_suppliers_dict(row)
+            result_list.append(result)
+        return jsonify(Suppliers=result_list)

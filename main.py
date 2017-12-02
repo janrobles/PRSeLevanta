@@ -36,20 +36,20 @@ def getApplicantById(applicantID):
     return ApplicantsHandler().getApplicantsById(applicantID)
 
 @app.route('/PRSeLevanta/resources/<int:resourceID>')
-def getApplicantById(resourceID):
+def getResourcesById(resourceID):
     return ResourcesHandler().getResourcesById(resourceID)
 
-# @app.route('/PartApp/parts/<int:pid>/suppliers')
-# def getSuppliersByPartId(pid):
-#     return PartHandler().getSuppliersByPartId(pid)
-#
+@app.route('/PRSeLevanta/resources/<int:resourceID>/suppliers')
+def getSuppliersByResourceId(resourceID):
+    return ResourcesHandler().getSuppliersByResourceId(resourceID)
+
 @app.route('/PRSeLevanta/suppliers/<int:supplierID>')
 def getSupplierById(supplierID):
     return SuppliersHandler().getSuppliersById(supplierID)
 
-# @app.route('/PartApp/suppliers/<int:sid>/parts')
-# def getPartsBySuplierId(sid):
-#     return SupplierHandler().getPartsBySupplierId(sid)
+@app.route('/PRSeLevanta/suppliers/<int:supplierID>/resources')
+def getResourcesBySupplierId(supplierID):
+    return SuppliersHandler().getResourcesBySupplierId(supplierID)
 
 if __name__ == '__main__':
     app.run()
