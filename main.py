@@ -3,6 +3,7 @@ from flask import Flask, jsonify, request
 from handler.applicants import ApplicantsHandler
 from handler.resources import ResourcesHandler
 from handler.suppliers import SuppliersHandler
+from handler.accounts import AccountsHandler
 
 app = Flask(__name__)
 
@@ -31,9 +32,26 @@ def getAllSuppliers():
      else:
         return SuppliersHandler().searchSuppliers(request.args)
 
+@app.route('/PRSeLevanta/accounts')
+def getAllAccounts():
+    if not request.args:
+        return AccountsHandler().getAllAccounts()
+    else:
+        return AccountsHandler().searchAccounts(request.args)
+
 @app.route('/PRSeLevanta/applicants/<int:applicantID>')
 def getApplicantById(applicantID):
     return ApplicantsHandler().getApplicantsById(applicantID)
+
+@app.route('/PRSeLevanta/accounts/<int:accountnumber>')
+def getAccountsByNumber(accountnumber):
+    return AccountsHandler().getAccountsByNumber(accountnumber)
+
+# @app.route('/PRSeLevanta/accounts/<int:resourceID>/suppliers')
+# def getSuppliersByResourceId(resourceID):
+#     return ResourcesHandler().getSuppliersByResourceId(resourceID)
+
+
 
 @app.route('/PRSeLevanta/resources/<int:resourceID>')
 def getResourcesById(resourceID):
