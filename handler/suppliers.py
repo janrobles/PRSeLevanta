@@ -29,6 +29,14 @@ class SuppliersHandler:
         result['supplierID'] = row[9]
         return result
 
+    def build_accounts_dict(self,row):
+        result = {}
+        result['account_#'] = row[0]
+        result['balance'] = row[1]
+        result['supp_ID'] = row[2]
+        return result
+
+
     def getAllSuppliers(self):
         suppliers = [(1,'Juan','Del Pueblo','calle bosque','Mayaguez'),(2,'Jan','Robles','calle bosque','Bayamon')]
         result_list = []
@@ -37,7 +45,7 @@ class SuppliersHandler:
             result_list.append(result)
         return jsonify(Suppliers = result_list)
 
-    def getSuppliersById(self, supplierID):
+    def getSuppliersById(self, supp_ID):
         row = (1,'Juan','Del Pueblo','calle bosque','Mayaguez')
         if not row:
             return jsonify(Error = "Part Not Found"), 404
@@ -70,7 +78,7 @@ class SuppliersHandler:
             result_list.append(result)
         return jsonify(Suppliers=result_list)
 
-    def getResourcesBySupplierId(self, supplierID):
+    def getResourcesBySupplierId(self, supp_ID):
         #dao = PartsDAO()
         resources = [(1,'Medication','Zyrtec','N/A','N/A','N/A','24','100','$3.99',1)]
         if not resources:
@@ -81,3 +89,15 @@ class SuppliersHandler:
             result = self.build_resources_dict(row)
             result_list.append(result)
         return jsonify(Resources=result_list)
+
+    def getAccountsBySupp_ID(self, supp_ID):
+        #dao = PartsDAO()
+        accounts = [(123456789,100,1),(234567890,500,2)]
+        if not accounts:
+            return jsonify(Error="Part Not Found"), 404
+        accounts_list = accounts
+        result_list = []
+        for row in accounts_list:
+            result = self.build_accounts_dict(row)
+            result_list.append(result)
+        return jsonify(Accounts=result_list)

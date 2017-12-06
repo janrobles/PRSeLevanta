@@ -8,12 +8,21 @@ class ApplicantsHandler:
 
     def build_applicants_dict(self,row):
         result = {}
-        result['applicantID'] = row[0]
+        result['apl_ID'] = row[0]
         result['appfname'] = row[1]
         result['applname'] = row[2]
         result['appaddress'] = row[3]
         result['applocation'] = row[4]
         return result
+
+    def build_creditcards_dict(self,row):
+        result = {}
+        result['card_#'] = row[0]
+        result['exp_date'] = row[1]
+        result['balance'] = row[2]
+        result['apl_ID'] = row[3]
+        return result
+
 
     def getAllApplicants(self):
         #dao = ApplicantsDAO()
@@ -24,7 +33,7 @@ class ApplicantsHandler:
             result_list.append(result)
         return jsonify(Applicants = result_list)
 
-    def getApplicantsById(self, applincantID):
+    def getApplicantsById(self, apl_ID):
         #dao = PartsDAO()
         row = (1,'Juan','Del Pueblo','calle bosque','Mayaguez')
         if not row:
@@ -59,3 +68,14 @@ class ApplicantsHandler:
         return jsonify(Applicants=result_list)
 
 
+    def getCreditCardByApl_ID(self, apl_ID):
+        #dao = PartsDAO()
+        credit_cards = [(123456789,10,100,1),(234567890,5,200,2)]
+        if not credit_cards:
+            return jsonify(Error="Part Not Found"), 404
+        credit_cards_list = credit_cards
+        result_list = []
+        for row in credit_cards_list:
+            result = self.build_creditcards_dict(row)
+            result_list.append(result)
+        return jsonify(Credit_Cards=result_list)

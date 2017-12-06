@@ -22,7 +22,7 @@ class ResourcesHandler:
 
     def build_suppliers_dict(self,row):
         result = {}
-        result['supplierID'] = row[0]
+        result['supp_ID'] = row[0]
         result['suppfname'] = row[1]
         result['supplname'] = row[2]
         result['suppaddress'] = row[3]
@@ -60,6 +60,8 @@ class ResourcesHandler:
         elif (len(args) == 1) and name:
             resources_list = (1,'Medication','Zyrtec','N/A','N/A','N/A','24','100','$3.99',1),(2,'Clothing','Pants','M','F','N/A','N/A','50','$0.00',2)
         elif (len(args) == 1) and category:
+            resources_list = (1,'Medication','Zyrtec','N/A','N/A','N/A','24','100','$3.99',1),(2,'Clothing','Pants','M','F','N/A','N/A','50','$0.00',2)
+        elif (len(args) == 1) and qty:
             resources_list = (1,'Medication','Zyrtec','N/A','N/A','N/A','24','100','$3.99',1),(2,'Clothing','Pants','M','F','N/A','N/A','50','$0.00',2)
         elif (len(args) == 2) and name and price:
             resources_list = (1,'Medication','Zyrtec','N/A','N/A','N/A','24','100','$3.99',1),(2,'Clothing','Pants','M','F','N/A','N/A','50','$0.00',2)
