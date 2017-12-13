@@ -1,7 +1,8 @@
 __author__ = 'janrobles'
 from flask import Flask
 from flask import jsonify
-#from dao.parts import PartsDAO
+##from dao.parts import PartsDAO
+from dao.applicants import applicantsDAO
 
 
 class ApplicantsHandler:
@@ -25,8 +26,8 @@ class ApplicantsHandler:
 
 
     def getAllApplicants(self):
-        #dao = ApplicantsDAO()
-        applicants = [(1,'Juan','Del Pueblo','calle bosque','Mayaguez'),(2,'Jan','Robles','calle bosque','Bayamon')]
+        dao = applicantsDAO()
+        applicants = dao
         result_list = []
         for row in applicants:
             result = self.build_applicants_dict(row)

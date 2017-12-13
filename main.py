@@ -7,6 +7,7 @@ from handler.accounts import AccountsHandler
 from handler.creditcards import CreditCardsHandler
 from handler.stats import StatsHandler
 from handler.transactions import TransactionsHandler
+from dao.applicants import applicantsDAO
 
 
 app = Flask(__name__)
