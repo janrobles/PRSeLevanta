@@ -1,7 +1,6 @@
 __author__ = 'janrobles'
 from flask import Flask
 from flask import jsonify
-##from dao.parts import PartsDAO
 from dao.applicants import applicantsDAO
 
 
@@ -10,33 +9,86 @@ class ApplicantsHandler:
     def build_applicants_dict(self,row):
         result = {}
         result['apl_ID'] = row[0]
-        result['appfname'] = row[1]
-        result['applname'] = row[2]
-        result['appaddress'] = row[3]
-        result['applocation'] = row[4]
+        result['first_name'] = row[1]
+        result['last_name'] = row[2]
         return result
 
     def build_creditcards_dict(self,row):
         result = {}
-        result['card_#'] = row[0]
-        result['exp_date'] = row[1]
-        result['balance'] = row[2]
-        result['apl_ID'] = row[3]
+
+        result['apl_ID'] = row[0]
+        result['first_name'] = row[1]
+        result['last_name'] = row[2]
+        result['card_num'] = row[3]
+        result['exp_date'] = row[4]
+        result['balance'] = row[5]
         return result
 
+    def build_applicantsaddress_dict(self, row):
+        result = {}
+        result['aid'] = row[0]
+        result['apl_ID'] = row[1]
+        result['rid'] = row[2]
+        result['street'] = row[3]
+        result['urb_conde']= row[4]
+        result['num'] = row[5]
+        result['city'] = row[6]
+        result['state'] = row[7]
+        result['zip'] = row[8]
+        result['gps_local'] = row[9]
+        return result
+
+    def build_info_dict(self, row):
+        result = {}
+        result['apl_ID'] = row[0]
+        result['first_name'] = row[1]
+        result['last_name'] = row[2]
+        result['street'] = row[3]
+        result['urb_conde'] = row[4]
+        result['num'] = row[5]
+        result['city'] = row[6]
+        result['state'] = row[7]
+        result['zip'] = row[8]
+        result['region'] = row[9]
+        result['gps_local'] = row[10]
+        return result
 
     def getAllApplicants(self):
         dao = applicantsDAO()
-        applicants = dao
+        applicants = dao.getAllApplicants()
         result_list = []
         for row in applicants:
             result = self.build_applicants_dict(row)
             result_list.append(result)
         return jsonify(Applicants = result_list)
 
+    def getApplicantsAddress(self):
+        dao = applicantsDAO()
+        addresses = dao.getAllApplicantsAddress()
+        if not addresses:
+            return jsonify(Error="Part Not Found"), 404
+        addresses_list = addresses
+        result_list = []
+        for row in addresses_list:
+            result = self.build_applicantsaddress_dict(row)
+            result_list.append(result)
+        return jsonify(Addresses=result_list)
+
+    def getAllApplicantsInfo(self):
+        dao = applicantsDAO()
+        info = dao.getAllApplicantsInfo()
+        if not info:
+            return jsonify(Error="Part Not Found"), 404
+        info_list = info
+        result_list = []
+        for row in info_list:
+            result = self.build_info_dict(row)
+            result_list.append(result)
+        return jsonify(ApplicantsInfo=result_list)
+
     def getApplicantsById(self, apl_ID):
-        #dao = PartsDAO()
-        row = (1,'Juan','Del Pueblo','calle bosque','Mayaguez')
+        dao = applicantsDAO()
+        row = dao.getApplicantById(apl_ID)
         if not row:
             return jsonify(Error = "Part Not Found"), 404
         else:
@@ -48,18 +100,18 @@ class ApplicantsHandler:
         lastname = args.get("lastname")
         location = args.get("location")
         address = args.get("address")
-        #dao = PartsDAO()
+        dao = applicantsDAO()
         applicants_list = []
         if (len(args) == 2) and name and location:
-            applicants_list = (1,'Juan','Del Pueblo','calle bosque','Mayaguez'),(2,'Jan','Robles','calle bosque','Bayamon')
+            applicants_list = dao.getApplicantsByNameAndLocation(name, location)
         elif (len(args) == 2) and name and address:
-            applicants_list = (1,'Juan','Del Pueblo','calle bosque','Mayaguez'),(2,'Jan','Robles','calle bosque','Bayamon')
+            applicants_list = dao.getApplicantsByNameAndAddress(name, address)
         elif (len(args) == 1) and location:
-            applicants_list = (1,'Juan','Del Pueblo','calle bosque','Mayaguez'),(2,'Jan','Robles','calle bosque','Bayamon')
+            applicants_list = dao.getApplicantsByLocation(location)
         elif (len(args) == 1) and address:
-            applicants_list = (1,'Juan','Del Pueblo','calle bosque','Mayaguez'),(2,'Jan','Robles','calle bosque','Bayamon')
+            applicants_list = dao.getApplicantsByAddress(address)
         elif (len(args) == 1) and lastname:
-            applicants_list = (1,'Juan','Del Pueblo','calle bosque','Mayaguez'),(2,'Jan','Robles','calle bosque','Bayamon')
+            applicants_list = dao.getApplicantsByLastname(lastname)
         else:
             return jsonify(Error = "Malformed query string"), 400
         result_list = []
@@ -70,13 +122,11 @@ class ApplicantsHandler:
 
 
     def getCreditCardByApl_ID(self, apl_ID):
-        #dao = PartsDAO()
-        credit_cards = [(123456789,10,100,1),(234567890,5,200,2)]
-        if not credit_cards:
+        dao = applicantsDAO()
+        row = dao.getCreditCardsByApplicantsID(apl_ID)
+        if not row:
             return jsonify(Error="Part Not Found"), 404
-        credit_cards_list = credit_cards
-        result_list = []
-        for row in credit_cards_list:
-            result = self.build_creditcards_dict(row)
-            result_list.append(result)
-        return jsonify(Credit_Cards=result_list)
+        else:
+            applicant = self.build_creditcards_dict(row)
+            return jsonify(CreditCards = applicant)
+

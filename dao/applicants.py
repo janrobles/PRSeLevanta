@@ -6,14 +6,32 @@ import psycopg2
 class applicantsDAO:
     def __init__(self):
 
-        connection_url = "dbname=%s user=%s passwd=%s" % (pg_config['prselevantadb'],
-                                                            pg_config['boricuaadmin'],
-                                                            pg_config['icom5016'])
+        connection_url = "dbname=%s user=%s password=%s" % (pg_config['dbname'],
+                                                          pg_config['user'],
+                                                          pg_config['passwd'])
         self.conn = psycopg2._connect(connection_url)
 
     def getAllApplicants(self):
         cursor = self.conn.cursor()
         query = "select * from applicants;"
+        cursor.execute(query)
+        result = []
+        for row in cursor:
+            result.append(row)
+        return result
+
+    def getAllApplicantsAddress(self):
+        cursor = self.conn.cursor()
+        query = "select * from applicantsaddress "
+        cursor.execute(query)
+        result = []
+        for row in cursor:
+            result.append(row)
+        return result
+
+    def getAllApplicantsInfo(self):
+        cursor =self.conn.cursor()
+        query = "select apl_ID,first_name,last_name,street,urb_conde,num,city,state,zip,region,gps_local from applicants natural inner join applicantsaddress natural inner join region"
         cursor.execute(query)
         result = []
         for row in cursor:
@@ -48,42 +66,57 @@ class applicantsDAO:
         result = cursor.fetchone()
         return result
 
-
-
-
-######-----------------------------------------------------------------------##################
-    def getPartsByColor(self, color):
+    def getApplicantsByNameAndLocation(self, first_name, location):
         cursor = self.conn.cursor()
-        query = "select * from parts where pcolor = %s;"
-        cursor.execute(query, (color,))
+        query = "select apl_ID, first_name, last_name from applicants natural inner join applicantsaddress where first_name = %s and gps_local = %s;"
+        cursor.execute(query, (first_name, location))
         result = []
         for row in cursor:
             result.append(row)
         return result
 
-    def getPartsByMaterial(self, material):
+    def getApplicantsByNameAndAddress(self, first_name, address):
         cursor = self.conn.cursor()
-        query = "select * from parts where pmaterial = %s;"
-        cursor.execute(query, (material,))
+        query = "select * from applicants where appfname = %s and appaddress = %s;"
+        cursor.execute(query, (first_name, address))
         result = []
         for row in cursor:
             result.append(row)
         return result
 
-    def getPartsByColorAndMaterial(self, color, material):
+    def getApplicantsByLocation(self, location):
         cursor = self.conn.cursor()
-        query = "select * from parts where pmaterial = %s and pcolor = %s;"
-        cursor.execute(query, (material, color))
+        query = "select * from applicants where applocation = %s;"
+        cursor.execute(query, (location,))
         result = []
         for row in cursor:
             result.append(row)
         return result
 
-    def getSuppliersByPartId(self, pid):
+    def getApplicantsByAddress(self, address):
         cursor = self.conn.cursor()
-        query = "select sid, sname, scity, sphone from parts natural inner join supplier natural inner join supplies where pid = %s;"
-        cursor.execute(query, (pid,))
+        query = "select * from applicants where appaddress = %s;"
+        cursor.execute(query, (address,))
         result = []
         for row in cursor:
             result.append(row)
         return result
+
+    def getApplicantsByLastname(self, lastname):
+        cursor = self.conn.cursor()
+        query = "select * from applicants where applname = %s;"
+        cursor.execute(query, (lastname,))
+        result = []
+        for row in cursor:
+            result.append(row)
+        return result
+
+    def getCreditCardsByApplicantsID(self, apl_ID):
+        cursor = self.conn.cursor()
+        query = "select apl_ID, first_name, last_name, card_num, exp_date, balance from creditcards natural inner join applicants where apl_ID=%s;"
+        cursor.execute(query, (apl_ID,))
+        result = cursor.fetchone()
+        return result
+
+
+

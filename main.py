@@ -1,5 +1,5 @@
-__author__ = 'janrobles'
-from flask import Flask, jsonify, request
+__author__ = 'janrobles,ericbarbosa,jantoro'
+from flask import Flask, request, jsonify
 from handler.applicants import ApplicantsHandler
 from handler.resources import ResourcesHandler
 from handler.suppliers import SuppliersHandler
@@ -7,7 +7,7 @@ from handler.accounts import AccountsHandler
 from handler.creditcards import CreditCardsHandler
 from handler.stats import StatsHandler
 from handler.transactions import TransactionsHandler
-from dao.applicants import applicantsDAO
+
 
 
 app = Flask(__name__)
@@ -19,7 +19,7 @@ def greeting():
 @app.route('/PRSeLevanta/applicants')
 def getAllApplicants():
     if not request.args:
-        return ApplicantsHandler().getAllApplicants()
+        return ApplicantsHandler().getAllApplicantsInfo()
     else:
         return ApplicantsHandler().searchApplicants(request.args)
 
