@@ -141,7 +141,7 @@ insert into Region(city, region) values ('Vieques','Carolina');
 
 --insert into CreditCards(card_num,apl_ID,exp_date,balance) values (515224967, (select apl_ID from applicants where last_name='Barbosa'),to_date('2021-07','YYYY-MM') ,300);
 
-select apl_ID,first_name, last_name, card_num, exp_date, balance from creditcards natural inner join applicants where apl_ID=3;
+--select apl_ID,first_name, last_name, card_num, exp_date, balance from creditcards natural inner join applicants where apl_ID=3;
 
 --select first_name, region from applicants natural inner join applicantsaddress natural inner join region where region='Mayaguez-Aguadilla';
 
