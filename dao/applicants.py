@@ -31,7 +31,7 @@ class applicantsDAO:
 
     def getAllApplicantsInfo(self):
         cursor =self.conn.cursor()
-        query = "select apl_ID,first_name,last_name,street,urb_conde,num,city,state,zip,region,gps_local from applicants natural inner join applicantsaddress natural inner join region"
+        query = "select apl_ID,first_name,last_name,street,urb_conde,num,city,state,zip,gps_local,region from applicants natural inner join applicantsaddress natural inner join region"
         cursor.execute(query)
         result = []
         for row in cursor:
@@ -54,57 +54,57 @@ class applicantsDAO:
 
     def getApplicantByCity(self, city):
         cursor = self.conn.cursor()
-        query = "select * from applicants where city = %s;"
+        query = "select apl_ID, first_name, last_name from applicants natural inner join applicantsaddress where city = %s;"
         cursor.execute(query, (city,))
         result = cursor.fetchone()
         return result
 
     def getApplicantByRegion(self, region):
         cursor = self.conn.cursor()
-        query = "select * from applicants where region = %s;"
+        query = "select apl_ID, first_name, last_name from applicants natural inner join region where region = %s;"
         cursor.execute(query, (region,))
         result = cursor.fetchone()
         return result
 
-    def getApplicantsByNameAndLocation(self, first_name, location):
+    def getApplicantsByNameAndLocation(self, first_name, gps_local):
         cursor = self.conn.cursor()
         query = "select apl_ID, first_name, last_name from applicants natural inner join applicantsaddress where first_name = %s and gps_local = %s;"
-        cursor.execute(query, (first_name, location))
+        cursor.execute(query, (first_name, gps_local))
         result = []
         for row in cursor:
             result.append(row)
         return result
 
-    def getApplicantsByNameAndAddress(self, first_name, address):
+    def getApplicantsByNameAndAddress(self, first_name, street, urb_conde, num, city, state, zip):
         cursor = self.conn.cursor()
-        query = "select * from applicants where appfname = %s and appaddress = %s;"
-        cursor.execute(query, (first_name, address))
+        query = "select apl_ID, first_name, last_name from applicants natural inner join applicantsaddress where first_name = %s and street = %s and urb_conde = %s and num = %s and city = %s and state = %s and zip = %s;"
+        cursor.execute(query, (first_name, street, urb_conde, num, city, state, zip))
         result = []
         for row in cursor:
             result.append(row)
         return result
 
-    def getApplicantsByLocation(self, location):
+    def getApplicantsByLocation(self, gps_local):
         cursor = self.conn.cursor()
-        query = "select * from applicants where applocation = %s;"
-        cursor.execute(query, (location,))
+        query = "select apl_ID, first_name, last_name from applicants natural inner join applicantsaddress where gps_local = %s;"
+        cursor.execute(query, (gps_local,))
         result = []
         for row in cursor:
             result.append(row)
         return result
 
-    def getApplicantsByAddress(self, address):
+    def getApplicantsByAddress(self, street, urb_conde, num, city, state, zip):
         cursor = self.conn.cursor()
-        query = "select * from applicants where appaddress = %s;"
-        cursor.execute(query, (address,))
+        query = "select apl_ID, first_name, last_name from applicants natural inner join applicantsaddress where street = %s and urb_conde = %s and num = %s and city = %s and state = %s and zip = %s;"
+        cursor.execute(query, (street, urb_conde, num, city, state, zip))
         result = []
         for row in cursor:
             result.append(row)
         return result
 
-    def getApplicantsByLastname(self, lastname):
+    def getApplicantsByLastname(self, last_name):
         cursor = self.conn.cursor()
-        query = "select * from applicants where applname = %s;"
+        query = "select * from applicants where last_name = %s;"
         cursor.execute(query, (lastname,))
         result = []
         for row in cursor:

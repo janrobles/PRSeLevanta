@@ -1,5 +1,7 @@
 ﻿create table Applicants(apl_ID serial primary key, first_name varchar(10), last_name varchar(10));
 
+create table Suppliers(supp_ID serial primary key, first_name varchar(10), last_name varchar(10));
+
 create table Region(rid serial primary key, city varchar(25), region varchar(25));create table Suppliers(supp_ID serial primary key, first_name varchar(10), last_name varchar(10));
 
 create table CreditCards(card_num integer primary key, apl_ID integer references Applicants(apl_ID), exp_date date, balance integer);
@@ -10,7 +12,7 @@ create table ApplicantsAddress(aid serial primary key, apl_ID integer references
 
 create table SuppliersAddress(aid serial primary key, supp_ID integer references Suppliers(supp_ID), rid integer references Region(rid), street varchar(25), urb_conde varchar(25), num integer, city varchar(25), state varchar(25), zip integer,  gps_local varchar(25));
 
-﻿create table Transactions(trans_ID serial primary key, card_num integer references CreditCards(card_num), acct_num integer references Accounts(acct_num), trans_date date, status varchar(10), amount integer);
+create table Transactions(trans_ID serial primary key, card_num integer references CreditCards(card_num), acct_num integer references Accounts(acct_num), trans_date date, status varchar(10), amount integer);
 
 create table Resources(res_ID serial primary key, category varchar(10), price integer , qty integer);
 
