@@ -59,17 +59,28 @@ class applicantsDAO:
         result = cursor.fetchone()
         return result
 
-    def getApplicantByRegion(self, region):
+    def getApplicantsByRegion(self, region):
         cursor = self.conn.cursor()
-        query = "select apl_ID, first_name, last_name from applicants natural inner join region where region = %s;"
+        query = "select apl_ID, first_name, last_name from applicants natural inner join applicantsaddress natural inner join region where region = %s;"
         cursor.execute(query, (region,))
-        result = cursor.fetchone()
+        result = []
+        for row in cursor:
+            result.append(row)
         return result
 
     def getApplicantsByNameAndLocation(self, first_name, gps_local):
         cursor = self.conn.cursor()
         query = "select apl_ID, first_name, last_name from applicants natural inner join applicantsaddress where first_name = %s and gps_local = %s;"
         cursor.execute(query, (first_name, gps_local))
+        result = []
+        for row in cursor:
+            result.append(row)
+        return result
+
+    def getApplicantsByNameAndRegion(self, first_name, region):
+        cursor = self.conn.cursor()
+        query = "select apl_ID, first_name, last_name from applicants natural inner join applicantsaddress natural inner join region where first_name = %s and region = %s;"
+        cursor.execute(query, (first_name, region))
         result = []
         for row in cursor:
             result.append(row)
@@ -105,7 +116,7 @@ class applicantsDAO:
     def getApplicantsByLastname(self, last_name):
         cursor = self.conn.cursor()
         query = "select * from applicants where last_name = %s;"
-        cursor.execute(query, (lastname,))
+        cursor.execute(query, (last_name,))
         result = []
         for row in cursor:
             result.append(row)

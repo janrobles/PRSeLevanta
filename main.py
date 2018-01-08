@@ -16,6 +16,7 @@ app = Flask(__name__)
 def greeting():
     return 'Hello, this is PRSeLevanta!'
 
+#### Routes of applicants ####
 @app.route('/PRSeLevanta/applicants')
 def getAllApplicants():
     if not request.args:
@@ -23,6 +24,41 @@ def getAllApplicants():
     else:
         return ApplicantsHandler().searchApplicants(request.args)
 
+@app.route('/PRSeLevanta/applicants/<int:apl_ID>')
+def getApplicantById(apl_ID):
+    return ApplicantsHandler().getApplicantsById(apl_ID)
+
+@app.route('/PRSeLevanta/applicants/<int:apl_ID>/creditcards')
+def getCreditCardByApl_ID(apl_ID):
+    return ApplicantsHandler().getCreditCardsByApl_ID(apl_ID)
+
+
+##### Routes of Suppliers  #####
+@app.route('/PRSeLevanta/suppliers')
+def getAllSuppliers():
+     if not request.args:
+        return SuppliersHandler().getAllSuppliersInfo()
+     else:
+        return SuppliersHandler().searchSuppliers(request.args)
+
+@app.route('/PRSeLevanta/suppliers/<int:supp_ID>')
+def getSupplierById(supp_ID):
+    return SuppliersHandler().getSuppliersById(supp_ID)
+
+@app.route('/PRSeLevanta/resources/<int:resourceID>/suppliers')
+def getSuppliersByResourceId(resourceID):
+    return ResourcesHandler().getSuppliersByResourceId(resourceID)
+
+@app.route('/PRSeLevanta/resources/<category>/suppliers')
+def getSuppliersByResourceCategory(category):
+    return SuppliersHandler().getSuppliersByResourceCategory(category)
+
+@app.route('/PRSeLevanta/suppliers/<int:supp_ID>/accounts')
+def getAccountsBySupp_ID(supp_ID):
+    return SuppliersHandler().getAccountsBySupp_ID(supp_ID)
+
+
+#### Routes of Resources ####
 @app.route('/PRSeLevanta/resources')
 def getAllResources():
      if not request.args:
@@ -30,34 +66,16 @@ def getAllResources():
      else:
         return ResourcesHandler().searchResources(request.args)
 
-@app.route('/PRSeLevanta/suppliers')
-def getAllSuppliers():
-     if not request.args:
-        return SuppliersHandler().getAllSuppliers()
-     else:
-        return SuppliersHandler().searchSuppliers(request.args)
+@app.route('/PRSeLevanta/resources/<int:resourceID>')
+def getResourcesById(resourceID):
+    return ResourcesHandler().getResourcesById(resourceID)
 
-@app.route('/PRSeLevanta/accounts')
-def getAllAccounts():
-    if not request.args:
-        return AccountsHandler().getAllAccounts()
-    else:
-        return AccountsHandler().searchAccounts(request.args)
+@app.route('/PRSeLevanta/suppliers/<int:supp_ID>/resources')
+def getResourcesBySupplierId(supp_ID):
+    return SuppliersHandler().getResourcesBySupplierId(supp_ID)
 
-@app.route('/PRSeLevanta/creditcards')
-def getAllCards():
-    if not request.args:
-        return CreditCardsHandler().getAllCards()
-    else:
-        return CreditCardsHandler().searchCards(request.args)
-@app.route('/PRSeLevanta/applicants/<int:apl_ID>/creditcards')
-def getCreditCardByApl_ID(apl_ID):
-    return ApplicantsHandler().getCreditCardByApl_ID(apl_ID)
 
-@app.route('/PRSeLevanta/suppliers/<int:supp_ID>/accounts')
-def getAccountsBySupp_ID(supp_ID):
-    return SuppliersHandler().getAccountsBySupp_ID(supp_ID)
-
+#### Routes of Transactions ####
 @app.route('/PRSeLevanta/transactions')
 def getAllTransactions():
     if not request.args:
@@ -65,10 +83,12 @@ def getAllTransactions():
     else:
         return TransactionsHandler().searchTransactions(request.args)
 
-@app.route('/PRSeLevanta/transactions/<int:purchase_ID>')
-def getTransactionById(purchase_ID):
-    return TransactionsHandler().getTransactionByID(purchase_ID)
+@app.route('/PRSeLevanta/transactions/<int:trans_ID>')
+def getTransactionById(trans_ID):
+    return TransactionsHandler().getTransactionByID(trans_ID)
 
+
+#### Routes of Stats ####
 @app.route('/PRSeLevanta/dailystats')
 def getDailyStats():
     return StatsHandler().getDailyStats()
@@ -81,33 +101,6 @@ def getWeeklyStats():
 def getRegionStats():
     return StatsHandler().getRegionStats()
 
-@app.route('/PRSeLevanta/applicants/<int:apl_ID>')
-def getApplicantById(apl_ID):
-    return ApplicantsHandler().getApplicantsById(apl_ID)
-
-@app.route('/PRSeLevanta/accounts/<int:accountnumber>')
-def getAccountsByNumber(accountnumber):
-    return AccountsHandler().getAccountsByNumber(accountnumber)
-
-@app.route('/PRSeLevanta/creditcards/<int:cardnumber>')
-def getCardsByNumber(cardnumber):
-    return CreditCardsHandler().getCardsByNumber(cardnumber)
-
-@app.route('/PRSeLevanta/resources/<int:resourceID>')
-def getResourcesById(resourceID):
-    return ResourcesHandler().getResourcesById(resourceID)
-
-@app.route('/PRSeLevanta/resources/<int:resourceID>/suppliers')
-def getSuppliersByResourceId(resourceID):
-    return ResourcesHandler().getSuppliersByResourceId(resourceID)
-
-@app.route('/PRSeLevanta/suppliers/<int:supp_ID>')
-def getSupplierById(supp_ID):
-    return SuppliersHandler().getSuppliersById(supp_ID)
-
-@app.route('/PRSeLevanta/suppliers/<int:supp_ID>/resources')
-def getResourcesBySupplierId(supp_ID):
-    return SuppliersHandler().getResourcesBySupplierId(supp_ID)
 
 if __name__ == '__main__':
     app.run()

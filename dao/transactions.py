@@ -22,7 +22,7 @@ class applicantsDAO:
 
     def getTransactionsByApplicantsID(self, apl_ID):
         cursor = self.conn.cursor()
-        query = "select trans_ID, trans_date, status, amount from transactions natural inner join applicants where apl_ID = %s;"
+        query = "select trans_ID,card_num,acct_num trans_date, status, amount from transactions natural inner join creditcards where apl_ID = %s;"
         cursor.execute(query, (apl_ID,))
         result = []
         for row in cursor:
@@ -31,7 +31,7 @@ class applicantsDAO:
 
     def getTransactionsBySuppliersID(self, supp_ID):
         cursor = self.conn.cursor()
-        query = "select trans_ID, trans_date, status, amount from transactions natural inner join applicants where supp_ID = %s;"
+        query = "select trans_ID, card_num, acct_num, trans_date, status, amount from transactions natural inner join accounts where supp_ID = %s;"
         cursor.execute(query, (supp_ID,))
         result = []
         for row in cursor:
@@ -40,7 +40,7 @@ class applicantsDAO:
 
     def getRequestedResources(self):
         cursor = self.conn.cursor()
-        query = "select res_ID, category from resources natural inner join transactions;"
+        query = "select res_ID, category from request;"
         cursor.execute(query)
         result = []
         for row in cursor:

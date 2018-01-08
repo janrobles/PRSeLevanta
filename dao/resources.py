@@ -37,11 +37,12 @@ class applicantsDAO:
         return result
 
 
-    def getResourcesBySupplierId(self, supp_ID):
+    def getSuppliersByResourcesId(self, res_ID):
         cursor = self.conn.cursor()
-        query = "select res_ID, category, price, qty from resources natural inner join suppliers where supp_ID=%s;"
+        query = "select supp_ID, first_name, last_name from supplies natural inner join suppliers where res_ID=%s;"
         cursor.execute(query, (supp_ID,))
-        result = cursor.fetchone()
+        for row in cursor:
+            result.append(row)
         return result
 
     def getResourcesInNeed(self, qty):
@@ -68,35 +69,35 @@ class applicantsDAO:
 
     def getResourcesByRegion(self, region):
         cursor = self.conn.cursor()
-        query = "select res_ID, category, price, qty from resources natural inner join suppliers natural inner join suppliersaddress natural inner join region where region = %s;"
+        query = "select res_ID, category, price, qty from resources natural inner join supplies natural inner join suppliersaddress natural inner join region where region = %s;"
         cursor.execute(query, (region))
         result = cursor.fetchone()
         return result
 
     def getResourcesByCategoryandRegion(self, category, region):
         cursor = self.conn.cursor()
-        query = "select res_ID, category, price, qty from resources natural inner join suppliers natural inner join suppliersaddress natural inner join region where category = %s and region = %s;"
+        query = "select res_ID, category, price, qty from resources natural inner join supplies natural inner join suppliersaddress natural inner join region where category = %s and region = %s;"
         cursor.execute(query, (category, region))
         result = cursor.fetchone()
         return result
 
     def getResourcesBySupplierCity(self, city):
         cursor = self.conn.cursor()
-        query = "select res_ID, category, price, qty from resources natural inner join suppliers natural inner join supplieraddress where city = %s;"
+        query = "select res_ID, category, price, qty from resources natural inner join supplies natural inner join supplieraddress where city = %s;"
         cursor.execute(query, (city,))
         result = cursor.fetchone()
         return result
 
     def getResourceAtRegion(self, res_ID, region):
         cursor = self.conn.cursor()
-        query = "select res_ID, category, price, qty from resources natural inner join suppliers natural inner join suppliersaddress natural inner join region where res_ID = %s and region = %s;"
+        query = "select res_ID, category, price, qty from resources natural inner join supplies natural inner join suppliersaddress natural inner join region where res_ID = %s and region = %s;"
         cursor.execute(query, (res_ID, region))
         result = cursor.fetchone()
         return result
 
     def getRequestedResources(self):
         cursor = self.conn.cursor()
-        query = "select res_ID, category from resources natural inner join transactions;"
+        query = "select res_ID, category from resources natural inner join request;"
         cursor.execute(query)
         result = []
         for row in cursor:

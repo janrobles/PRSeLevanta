@@ -99,17 +99,17 @@ class ApplicantsHandler:
         name = args.get("name")
         lastname = args.get("lastname")
         location = args.get("location")
-        address = args.get("address")
+        region = args.get("region")
         dao = applicantsDAO()
         applicants_list = []
         if (len(args) == 2) and name and location:
             applicants_list = dao.getApplicantsByNameAndLocation(name, location)
-        elif (len(args) == 2) and name and address:
-            applicants_list = dao.getApplicantsByNameAndAddress(name, address)
+        elif (len(args) == 2) and name and region:
+            applicants_list = dao.getApplicantsByNameAndRegion(name, region)
         elif (len(args) == 1) and location:
             applicants_list = dao.getApplicantsByLocation(location)
-        elif (len(args) == 1) and address:
-            applicants_list = dao.getApplicantsByAddress(address)
+        elif (len(args) == 1) and region:
+            applicants_list = dao.getApplicantsByRegion(region)
         elif (len(args) == 1) and lastname:
             applicants_list = dao.getApplicantsByLastname(lastname)
         else:
@@ -121,12 +121,12 @@ class ApplicantsHandler:
         return jsonify(Applicants=result_list)
 
 
-    def getCreditCardByApl_ID(self, apl_ID):
+    def getCreditCardsByApl_ID(self, apl_ID):
         dao = applicantsDAO()
         row = dao.getCreditCardsByApplicantsID(apl_ID)
         if not row:
             return jsonify(Error="Part Not Found"), 404
         else:
-            applicant = self.build_creditcards_dict(row)
-            return jsonify(CreditCards = applicant)
+            creditcards = self.build_creditcards_dict(row)
+            return jsonify(CreditCards = creditcards)
 

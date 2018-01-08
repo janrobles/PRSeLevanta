@@ -49,21 +49,27 @@ class suppliersDAO:
         cursor = self.conn.cursor()
         query = "select * from suppliers where first_name = %s;"
         cursor.execute(query, (first_name,))
-        result = cursor.fetchone()
+        result = []
+        for row in cursor:
+            result.append(row)
         return result
 
     def getSuppliersByCity(self, city):
         cursor = self.conn.cursor()
         query = "select supp_ID, first_name, last_name from suppliers natural inner join suppliersaddress where city = %s;"
         cursor.execute(query, (city,))
-        result = cursor.fetchone()
+        result = []
+        for row in cursor:
+            result.append(row)
         return result
 
     def getSuppliersByRegion(self, region):
         cursor = self.conn.cursor()
-        query = "select supp_ID, first_name, last_name from suppliers natural inner join region where region = %s;"
+        query = "select supp_ID, first_name, last_name from suppliers natural inner join suppliersaddress natural inner join region where region = %s;"
         cursor.execute(query, (region,))
-        result = cursor.fetchone()
+        result = []
+        for row in cursor:
+            result.append(row)
         return result
 
     def getSuppliersByNameAndLocation(self, first_name, gps_local):
@@ -105,7 +111,7 @@ class suppliersDAO:
     def getSuppliersByLastname(self, last_name):
         cursor = self.conn.cursor()
         query = "select * from suppliers where last_name = %s;"
-        cursor.execute(query, (las_tname,))
+        cursor.execute(query, (last_name,))
         result = []
         for row in cursor:
             result.append(row)
@@ -115,26 +121,34 @@ class suppliersDAO:
         cursor = self.conn.cursor()
         query = "select supp_ID, first_name, last_name, acct_num, balance from accounts natural inner join suppliers where supp_ID=%s;"
         cursor.execute(query, (supp_ID,))
-        result = cursor.fetchone()
+        result = []
+        for row in cursor:
+            result.append(row)
         return result
 
     def getResourcesBySuppliersID(self, supp_ID):
         cursor = self.conn.cursor()
-        query = "select res_ID, category, price, qty from resources natural inner join suppliers where supp_ID=%s;"
+        query = "select res_ID, category, price, qty from resources natural inner join supplies where supp_ID=%s;"
         cursor.execute(query, (supp_ID,))
-        result = cursor.fetchone()
-        return result
-
-    def getSuppliersByResourceID(self, res_ID):
-        cursor = self.conn.cursor()
-        query = "select supp_ID, first_name, last_name from suppliers natural inner join resources where res_ID=%s;"
-        cursor.execute(query, (res_ID,))
-        result = cursor.fetchone()
+        result = []
+        for row in cursor:
+            result.append(row)
         return result
 
     def getSuppliersByResourceCategory(self, category):
         cursor = self.conn.cursor()
-        query = "select supp_ID, first_name, last_name from suppliers natural inner join resources where category=%s;"
+        query = "select supp_ID, first_name, last_name from supplies natural inner join resources natural inner join suppliers where category=%s;"
         cursor.execute(query, (category,))
-        result = cursor.fetchone()
+        result = []
+        for row in cursor:
+            result.append(row)
+        return result
+
+    def getSuppliersByNameAndRegion(self, first_name, region):
+        cursor = self.conn.cursor()
+        query = "select supp_ID, first_name, last_name from suppliers natural inner join suppliersaddress natural inner join where first_name = %s and region = %s;"
+        cursor.execute(query, (first_name,region))
+        result = []
+        for row in cursor:
+            result.append(row)
         return result
