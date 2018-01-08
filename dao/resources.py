@@ -36,10 +36,11 @@ class applicantsDAO:
         result = cursor.fetchone()
         return result
 
-    def getResourceByCategory(self, category):
+
+    def getResourcesBySupplierId(self, supp_ID):
         cursor = self.conn.cursor()
-        query = "select * from resources where category = %s;"
-        cursor.execute(query, (category,))
+        query = "select res_ID, category, price, qty from resources natural inner join suppliers where supp_ID=%s;"
+        cursor.execute(query, (supp_ID,))
         result = cursor.fetchone()
         return result
 
@@ -50,6 +51,7 @@ class applicantsDAO:
         result = cursor.fetchone()
         return result
 
+    #### puede ser igual a cero??
     def getResourcesAvailable(self, qty):
         cursor = self.conn.cursor()
         query = "select * from resources where qty >= 0;"
@@ -85,12 +87,36 @@ class applicantsDAO:
         result = cursor.fetchone()
         return result
 
+    def getResourceAtRegion(self, res_ID, region):
+        cursor = self.conn.cursor()
+        query = "select res_ID, category, price, qty from resources natural inner join suppliers natural inner join suppliersaddress natural inner join region where res_ID = %s and region = %s;"
+        cursor.execute(query, (res_ID, region))
+        result = cursor.fetchone()
+        return result
+
+    def getRequestedResources(self):
+        cursor = self.conn.cursor()
+        query = "select res_ID, category from resources natural inner join transactions;"
+        cursor.execute(query)
+        result = []
+        for row in cursor:
+            result.append(row)
+        return result
+
+ ## def getKeywordRequested(self, resName):
+#         cursor = self.conn.cursor()
+#         query = "select res_ID, category resources natural inner join transactions where resName like = %s% order by resName"
+#         cursor.execute(query, (resName))
+#         result = cursor.fetchone()
+#         return result
 
 
-
-
-
-
+ ## def getKeywordAvailable(self, resName):
+#         cursor = self.conn.cursor()
+#         query = "select res_ID, category resources natural inner join transactions where qty > 0 and resName like = %s% order by resName"
+#         cursor.execute(query, (resName))
+#         result = cursor.fetchone()
+#         return result
 
 
 
