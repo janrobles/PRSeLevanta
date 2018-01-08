@@ -74,6 +74,9 @@ def getResourcesById(resourceID):
 def getResourcesBySupplierId(supp_ID):
     return SuppliersHandler().getResourcesBySupplierId(supp_ID)
 
+@app.route('/PRSeLevanta/requested')
+def getRequestedResources():
+    return ResourcesHandler().getRequestedResources()
 
 #### Routes of Transactions ####
 @app.route('/PRSeLevanta/transactions')

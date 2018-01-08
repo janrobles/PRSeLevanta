@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2b6ee11b-c562-4154-ad14-e852bcc74174" name="Default" comment="applicants dao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dao/accounts.py" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/dao/applicants.py" afterPath="$PROJECT_DIR$/dao/applicants.py" />
       <change beforePath="$PROJECT_DIR$/dao/resources.py" afterPath="$PROJECT_DIR$/dao/resources.py" />
-      <change beforePath="$PROJECT_DIR$/dao/suppliers.py" afterPath="$PROJECT_DIR$/dao/suppliers.py" />
-      <change beforePath="$PROJECT_DIR$/dao/transactions.py" afterPath="$PROJECT_DIR$/dao/transactions.py" />
-      <change beforePath="$PROJECT_DIR$/handler/applicants.py" afterPath="$PROJECT_DIR$/handler/applicants.py" />
-      <change beforePath="$PROJECT_DIR$/handler/suppliers.py" afterPath="$PROJECT_DIR$/handler/suppliers.py" />
+      <change beforePath="$PROJECT_DIR$/handler/resources.py" afterPath="$PROJECT_DIR$/handler/resources.py" />
       <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <ignored path="PRSeLevanta.iws" />
@@ -22,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/PRSeLevanta$main.coverage" NAME="main Coverage Results" MODIFIED="1515432059096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PRSeLevanta$main.coverage" NAME="main Coverage Results" MODIFIED="1515443838634" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -35,42 +30,18 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="51" column="36" lean-forward="false" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
+            <state relative-caret-position="342">
+              <caret line="77" column="28" lean-forward="false" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="resources.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dao/resources.py">
+        <entry file="file://$PROJECT_DIR$/handler/resources.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="41" column="107" lean-forward="false" selection-start-line="41" selection-start-column="107" selection-end-line="41" selection-end-column="107" />
-              <folding>
-                <marker date="1515428782309" expanded="true" signature="503:526" ph="select * fro... resources" />
-                <marker date="1515428782309" expanded="true" signature="747:816" ph="select res_I... resources" />
-                <marker date="1515428782309" expanded="true" signature="1042:1083" ph="select * fro... resources" />
-                <marker date="1515428782309" expanded="true" signature="1288:1384" ph="select res_I... resources" />
-                <marker date="1515428782309" expanded="true" signature="1602:1639" ph="select * fro... resources" />
-                <marker date="1515428782309" expanded="true" signature="1867:1905" ph="select * fro... resources" />
-                <marker date="1515428782309" expanded="true" signature="2105:2148" ph="select * fro... resources" />
-                <marker date="1515428782309" expanded="true" signature="2349:2507" ph="select res_I... resources" />
-                <marker date="1515428782309" expanded="true" signature="2726:2902" ph="select res_I... resources" />
-                <marker date="1515428782309" expanded="true" signature="3114:3243" ph="select res_I... resources" />
-                <marker date="1515428782309" expanded="true" signature="3447:3621" ph="select res_I... resources" />
-                <marker date="1515428782309" expanded="true" signature="3820:3878" ph="select res_I... resources" />
-                <marker date="1515428782309" expanded="true" signature="3820:3885" ph="select res_I... resources" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="suppliers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/handler/suppliers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="87" column="40" lean-forward="false" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
+            <state relative-caret-position="273">
+              <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
               <folding>
                 <element signature="e#25#48#0" expanded="true" />
               </folding>
@@ -78,69 +49,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="suppliers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dao/suppliers.py">
+      <file leaf-file-name="resources.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dao/resources.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="126" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+            <state relative-caret-position="223">
+              <caret line="101" column="52" lean-forward="false" selection-start-line="101" selection-start-column="52" selection-end-line="101" selection-end-column="52" />
               <folding>
-                <marker date="1515432889941" expanded="true" signature="502:525" ph="select * fro... suppliers" />
-                <marker date="1515432889941" expanded="true" signature="750:780" ph="select * fro... suppliersaddress" />
-                <marker date="1515432889941" expanded="true" signature="1001:1166" ph="select supp_... suppliers" />
-                <marker date="1515432889941" expanded="true" signature="1393:1435" ph="select * fro... suppliers" />
-                <marker date="1515432889941" expanded="true" signature="1637:1682" ph="select * fro... suppliers" />
-                <marker date="1515432889941" expanded="true" signature="1924:2028" ph="select supp_... suppliers" />
-                <marker date="1515432889941" expanded="true" signature="2268:2400" ph="select supp_... suppliers" />
-                <marker date="1515432889941" expanded="true" signature="2666:2795" ph="select supp_... suppliers" />
-                <marker date="1515432889941" expanded="true" signature="3105:3305" ph="select supp_... suppliers" />
-                <marker date="1515432889941" expanded="true" signature="3597:3706" ph="select supp_... suppliers" />
-                <marker date="1515432889941" expanded="true" signature="3986:4166" ph="select supp_... suppliers" />
-                <marker date="1515432889941" expanded="true" signature="4446:4490" ph="select * fro... suppliers" />
-                <marker date="1515432889941" expanded="true" signature="4740:4856" ph="select supp_... accounts" />
-                <marker date="1515432889941" expanded="true" signature="5105:5200" ph="select res_I... resources" />
-                <marker date="1515432889941" expanded="true" signature="5455:5582" ph="select supp_... supplies" />
-                <marker date="1515432889941" expanded="true" signature="5845:5990" ph="select supp_... suppliers" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="applicants.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dao/applicants.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="61" column="21" lean-forward="false" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
-              <folding>
-                <element signature="e#25#62#0" expanded="true" />
-                <marker date="1515422329569" expanded="true" signature="504:528" ph="select * fro... applicants" />
-                <marker date="1515422329569" expanded="true" signature="754:785" ph="select * fro... applicantsaddress" />
-                <marker date="1515422329569" expanded="true" signature="1007:1173" ph="select apl_I... applicants" />
-                <marker date="1515422329569" expanded="true" signature="1399:1441" ph="select * fro... applicants" />
-                <marker date="1515422329569" expanded="true" signature="1642:1688" ph="select * fro... applicants" />
-                <marker date="1515422329569" expanded="true" signature="1887:1992" ph="select apl_I... applicants" />
-                <marker date="1515422329569" expanded="true" signature="2190:2323" ph="select apl_I... applicants" />
-                <marker date="1515422329569" expanded="true" signature="2590:2720" ph="select apl_I... applicants" />
-                <marker date="1515422329569" expanded="true" signature="2996:3149" ph="select apl_I... applicants" />
-                <marker date="1515422329569" expanded="true" signature="3457:3658" ph="select apl_I... applicants" />
-                <marker date="1515422329569" expanded="true" signature="3951:4061" ph="select apl_I... applicants" />
-                <marker date="1515422329569" expanded="true" signature="4342:4523" ph="select apl_I... applicants" />
-                <marker date="1515422329569" expanded="true" signature="4804:4849" ph="select * fro... applicants" />
-                <marker date="1515422329569" expanded="true" signature="5102:5230" ph="select apl_I... creditcards" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="transactions.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dao/transactions.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding>
-                <marker date="1515430179174" expanded="true" signature="506:532" ph="select * fro... transactions" />
-                <marker date="1515430179174" expanded="true" signature="772:899" ph="select trans... transactions" />
-                <marker date="1515430179174" expanded="true" signature="1150:1278" ph="select trans... transactions" />
-                <marker date="1515430179174" expanded="true" signature="1514:1550" ph="select res_I... request" />
+                <marker date="1515443838476" expanded="true" signature="502:525" ph="select * fro... resources" />
+                <marker date="1515443838476" expanded="true" signature="751:792" ph="select * fro... resources" />
+                <marker date="1515443838476" expanded="true" signature="997:1093" ph="select res_I... resources" />
+                <marker date="1515443838476" expanded="true" signature="1331:1368" ph="select * fro... resources" />
+                <marker date="1515443838476" expanded="true" signature="1639:1677" ph="select * fro... resources" />
+                <marker date="1515443838476" expanded="true" signature="1920:1963" ph="select * fro... resources" />
+                <marker date="1515443838476" expanded="true" signature="2207:2365" ph="select res_I... resources" />
+                <marker date="1515443838476" expanded="true" signature="2627:2804" ph="select res_I... resources" />
+                <marker date="1515443838476" expanded="true" signature="3016:3146" ph="select res_I... resources" />
+                <marker date="1515443838476" expanded="true" signature="3386:3544" ph="select res_I... resources" />
+                <marker date="1515443838476" expanded="true" signature="3743:3813" ph="select res_I... resources" />
+                <marker date="1515443838476" expanded="true" signature="3743:3820" ph="select res_I... resources" />
+                <marker date="1515443838476" expanded="true" signature="4049:4099" ph="select res_I... resources" />
+                <marker date="1515443838476" expanded="true" signature="4345:4424" ph="select res_I... resources" />
               </folding>
             </state>
           </provider>
@@ -169,17 +97,17 @@
         <option value="$PROJECT_DIR$/handler/stats.py" />
         <option value="$PROJECT_DIR$/handler/accounts.py" />
         <option value="$PROJECT_DIR$/handler/creditcards.py" />
-        <option value="$PROJECT_DIR$/handler/resources.py" />
         <option value="$PROJECT_DIR$/handler/transactions.py" />
         <option value="$PROJECT_DIR$/dao/accounts.py" />
         <option value="$PROJECT_DIR$/config/__init__.py" />
         <option value="$PROJECT_DIR$/handler/applicants.py" />
         <option value="$PROJECT_DIR$/dao/applicants.py" />
-        <option value="$PROJECT_DIR$/dao/resources.py" />
         <option value="$PROJECT_DIR$/dao/transactions.py" />
         <option value="$PROJECT_DIR$/handler/suppliers.py" />
-        <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/dao/suppliers.py" />
+        <option value="$PROJECT_DIR$/handler/resources.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/dao/resources.py" />
       </list>
     </option>
   </component>
@@ -189,9 +117,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="65" />
-    <option name="y" value="52" />
+    <option name="y" value="24" />
     <option name="width" value="1375" />
     <option name="height" value="848" />
   </component>
@@ -214,6 +142,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -235,7 +164,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -467,7 +395,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="52" width="1375" height="848" extended-state="1" />
+    <frame x="65" y="24" width="1375" height="848" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0952381" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -478,7 +406,6 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16290909" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -491,6 +418,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -521,35 +449,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/accounts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/accounts.py" />
     <entry file="file://$PROJECT_DIR$/dao/applicants.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#62#0" expanded="true" />
-            <marker date="1515422329569" expanded="true" signature="504:528" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="754:785" ph="select * fro... applicantsaddress" />
-            <marker date="1515422329569" expanded="true" signature="1007:1173" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="1399:1441" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="1642:1688" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="1887:1992" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="2190:2323" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="2590:2720" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="2996:3149" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="3457:3658" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="3951:4061" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="4342:4523" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="4804:4849" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="5102:5230" ph="select apl_I... creditcards" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -572,7 +476,7 @@
         <state relative-caret-position="0">
           <caret line="47" column="36" lean-forward="false" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
           <folding>
-            <element signature="e#25#48#0" expanded="true" />
+            <element signature="e#25#48#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -581,9 +485,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="56" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -602,7 +503,7 @@
         <state relative-caret-position="0">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <element signature="e#25#48#0" expanded="false" />
+            <element signature="e#25#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -625,35 +526,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/accounts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/accounts.py" />
     <entry file="file://$PROJECT_DIR$/dao/applicants.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#62#0" expanded="true" />
-            <marker date="1515422329569" expanded="true" signature="504:528" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="754:785" ph="select * fro... applicantsaddress" />
-            <marker date="1515422329569" expanded="true" signature="1007:1173" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="1399:1441" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="1642:1688" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="1887:1992" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="2190:2323" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="2590:2720" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="2996:3149" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="3457:3658" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="3951:4061" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="4342:4523" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="4804:4849" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="5102:5230" ph="select apl_I... creditcards" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -676,7 +553,7 @@
         <state relative-caret-position="0">
           <caret line="47" column="36" lean-forward="false" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
           <folding>
-            <element signature="e#25#48#0" expanded="true" />
+            <element signature="e#25#48#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -685,9 +562,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="56" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -706,7 +580,7 @@
         <state relative-caret-position="0">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
-            <element signature="e#25#48#0" expanded="false" />
+            <element signature="e#25#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -729,35 +603,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/accounts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/accounts.py" />
     <entry file="file://$PROJECT_DIR$/dao/applicants.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#62#0" expanded="true" />
-            <marker date="1515422329569" expanded="true" signature="504:528" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="754:785" ph="select * fro... applicantsaddress" />
-            <marker date="1515422329569" expanded="true" signature="1007:1173" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="1399:1441" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="1642:1688" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="1887:1992" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="2190:2323" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="2590:2720" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="2996:3149" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="3457:3658" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="3951:4061" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="4342:4523" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="4804:4849" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="5102:5230" ph="select apl_I... creditcards" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -780,7 +630,7 @@
         <state relative-caret-position="0">
           <caret line="47" column="36" lean-forward="false" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="36" />
           <folding>
-            <element signature="e#25#48#0" expanded="true" />
+            <element signature="e#25#48#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -789,9 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="56" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -810,7 +657,7 @@
         <state relative-caret-position="0">
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding>
-            <element signature="e#25#48#0" expanded="false" />
+            <element signature="e#25#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -837,9 +684,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="20" selection-end-column="46" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -865,7 +709,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#25#48#0" expanded="false" />
+            <element signature="e#25#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -875,7 +719,7 @@
         <state relative-caret-position="0">
           <caret line="64" column="24" lean-forward="false" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
           <folding>
-            <element signature="e#25#48#0" expanded="true" />
+            <element signature="e#25#48#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -915,9 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="56" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -925,16 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="60" column="35" lean-forward="false" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handler/resources.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding>
             <element signature="e#25#48#0" expanded="false" />
           </folding>
@@ -949,48 +780,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/accounts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="24" lean-forward="false" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="51" column="36" lean-forward="false" selection-start-line="51" selection-start-column="36" selection-end-line="51" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handler/suppliers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="87" column="40" lean-forward="false" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="40" />
-          <folding>
-            <element signature="e#25#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/accounts.py" />
     <entry file="file://$PROJECT_DIR$/dao/transactions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <marker date="1515430179174" expanded="true" signature="506:532" ph="select * fro... transactions" />
-            <marker date="1515430179174" expanded="true" signature="772:899" ph="select trans... transactions" />
-            <marker date="1515430179174" expanded="true" signature="1150:1278" ph="select trans... transactions" />
-            <marker date="1515430179174" expanded="true" signature="1514:1550" ph="select res_I... request" />
-          </folding>
+        <state relative-caret-position="54">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/applicants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="61" column="21" lean-forward="false" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dao/suppliers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="2250">
           <caret line="126" column="0" lean-forward="false" selection-start-line="125" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding>
             <marker date="1515432889941" expanded="true" signature="502:525" ph="select * fro... suppliers" />
@@ -1013,48 +820,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/resources.py">
+    <entry file="file://$PROJECT_DIR$/handler/suppliers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="41" column="107" lean-forward="false" selection-start-line="41" selection-start-column="107" selection-end-line="41" selection-end-column="107" />
+        <state relative-caret-position="270">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
-            <marker date="1515428782309" expanded="true" signature="503:526" ph="select * fro... resources" />
-            <marker date="1515428782309" expanded="true" signature="747:816" ph="select res_I... resources" />
-            <marker date="1515428782309" expanded="true" signature="1042:1083" ph="select * fro... resources" />
-            <marker date="1515428782309" expanded="true" signature="1288:1384" ph="select res_I... resources" />
-            <marker date="1515428782309" expanded="true" signature="1602:1639" ph="select * fro... resources" />
-            <marker date="1515428782309" expanded="true" signature="1867:1905" ph="select * fro... resources" />
-            <marker date="1515428782309" expanded="true" signature="2105:2148" ph="select * fro... resources" />
-            <marker date="1515428782309" expanded="true" signature="2349:2507" ph="select res_I... resources" />
-            <marker date="1515428782309" expanded="true" signature="2726:2902" ph="select res_I... resources" />
-            <marker date="1515428782309" expanded="true" signature="3114:3243" ph="select res_I... resources" />
-            <marker date="1515428782309" expanded="true" signature="3447:3621" ph="select res_I... resources" />
-            <marker date="1515428782309" expanded="true" signature="3820:3878" ph="select res_I... resources" />
-            <marker date="1515428782309" expanded="true" signature="3820:3885" ph="select res_I... resources" />
+            <element signature="e#25#48#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/applicants.py">
+    <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="61" column="21" lean-forward="false" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+        <state relative-caret-position="342">
+          <caret line="77" column="28" lean-forward="false" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handler/resources.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
           <folding>
-            <element signature="e#25#62#0" expanded="true" />
-            <marker date="1515422329569" expanded="true" signature="504:528" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="754:785" ph="select * fro... applicantsaddress" />
-            <marker date="1515422329569" expanded="true" signature="1007:1173" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="1399:1441" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="1642:1688" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="1887:1992" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="2190:2323" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="2590:2720" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="2996:3149" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="3457:3658" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="3951:4061" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="4342:4523" ph="select apl_I... applicants" />
-            <marker date="1515422329569" expanded="true" signature="4804:4849" ph="select * fro... applicants" />
-            <marker date="1515422329569" expanded="true" signature="5102:5230" ph="select apl_I... creditcards" />
+            <element signature="e#25#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/resources.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="101" column="52" lean-forward="false" selection-start-line="101" selection-start-column="52" selection-end-line="101" selection-end-column="52" />
+          <folding>
+            <marker date="1515443838476" expanded="true" signature="502:525" ph="select * fro... resources" />
+            <marker date="1515443838476" expanded="true" signature="751:792" ph="select * fro... resources" />
+            <marker date="1515443838476" expanded="true" signature="997:1093" ph="select res_I... resources" />
+            <marker date="1515443838476" expanded="true" signature="1331:1368" ph="select * fro... resources" />
+            <marker date="1515443838476" expanded="true" signature="1639:1677" ph="select * fro... resources" />
+            <marker date="1515443838476" expanded="true" signature="1920:1963" ph="select * fro... resources" />
+            <marker date="1515443838476" expanded="true" signature="2207:2365" ph="select res_I... resources" />
+            <marker date="1515443838476" expanded="true" signature="2627:2804" ph="select res_I... resources" />
+            <marker date="1515443838476" expanded="true" signature="3016:3146" ph="select res_I... resources" />
+            <marker date="1515443838476" expanded="true" signature="3386:3544" ph="select res_I... resources" />
+            <marker date="1515443838476" expanded="true" signature="3743:3813" ph="select res_I... resources" />
+            <marker date="1515443838476" expanded="true" signature="3743:3820" ph="select res_I... resources" />
+            <marker date="1515443838476" expanded="true" signature="4049:4099" ph="select res_I... resources" />
+            <marker date="1515443838476" expanded="true" signature="4345:4424" ph="select res_I... resources" />
           </folding>
         </state>
       </provider>
