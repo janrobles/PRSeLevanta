@@ -70,6 +70,14 @@ def getAllResources():
 def getResourcesById(resourceID):
     return ResourcesHandler().getResourcesById(resourceID)
 
+@app.route('/PRSeLevanta/resourcesavailable')
+def getResourcesAvailable():
+    return ResourcesHandler().getResourcesAvailable()
+
+@app.route('/PRSeLevanta/resourcesinneed')
+def getResourcesInNeed():
+    return ResourcesHandler().getResourcesInNeed()
+
 @app.route('/PRSeLevanta/suppliers/<int:supp_ID>/resources')
 def getResourcesBySupplierId(supp_ID):
     return SuppliersHandler().getResourcesBySupplierId(supp_ID)
@@ -77,6 +85,11 @@ def getResourcesBySupplierId(supp_ID):
 @app.route('/PRSeLevanta/requested')
 def getRequestedResources():
     return ResourcesHandler().getRequestedResources()
+
+@app.route('/PRSeLevanta/applicants/<int:apl_ID>/requested')
+def getResourcesRequestedByApplicantsId(apl_ID):
+    return ResourcesHandler().getResourcesRequestedByApplicantID(apl_ID)
+
 
 #### Routes of Transactions ####
 @app.route('/PRSeLevanta/transactions')
@@ -89,6 +102,14 @@ def getAllTransactions():
 @app.route('/PRSeLevanta/transactions/<int:trans_ID>')
 def getTransactionById(trans_ID):
     return TransactionsHandler().getTransactionByID(trans_ID)
+
+@app.route('/PRSeLevanta/applicants/<int:apl_ID>/transactions')
+def getTransactionByApplicantsId(apl_ID):
+    return TransactionsHandler().getTransactionsByApplicantsID(apl_ID)
+
+@app.route('/PRSeLevanta/suppliers/<int:supp_ID>/transactions')
+def getTransactionBySuppliersId(supp_ID):
+    return TransactionsHandler().getTransactionsBySuppliersID(supp_ID)
 
 
 #### Routes of Stats ####

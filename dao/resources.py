@@ -31,26 +31,35 @@ class resourcesDAO:
     def getSuppliersByResourcesId(self, res_ID):
         cursor = self.conn.cursor()
         query = "select supp_ID, first_name, last_name from supplies natural inner join suppliers where res_ID=%s;"
-        cursor.execute(query, (supp_ID,))
+        cursor.execute(query, (res_ID,))
         result = []
         for row in cursor:
             result.append(row)
         return result
 
-    def getResourcesInNeed(self, qty):
+    def getResourcesInNeed(self):
         cursor = self.conn.cursor()
-        query = "select * from resources where qty = 0;"
-        cursor.execute(query, (qty,))
+        query = "select res_ID, category, price, qty  from resources natural inner join request where resources.qty = 0;"
+        cursor.execute(query)
         result = []
         for row in cursor:
             result.append(row)
         return result
 
     #### puede ser igual a cero??
-    def getResourcesAvailable(self, qty):
+    def getResourcesByQty(self, qty):
         cursor = self.conn.cursor()
-        query = "select * from resources where qty >= 0;"
+        query = "select * from resources where qty = %s;"
         cursor.execute(query, (qty,))
+        result = []
+        for row in cursor:
+            result.append(row)
+        return result
+
+    def getResourcesAvailable(self):
+        cursor = self.conn.cursor()
+        query = "select * from resources where qty > 0;"
+        cursor.execute(query)
         result = []
         for row in cursor:
             result.append(row)
@@ -68,7 +77,7 @@ class resourcesDAO:
     def getResourcesByRegion(self, region):
         cursor = self.conn.cursor()
         query = "select res_ID, category, price, qty from resources natural inner join supplies natural inner join suppliersaddress natural inner join region where region = %s;"
-        cursor.execute(query, (region))
+        cursor.execute(query, (region,))
         result = []
         for row in cursor:
             result.append(row)
@@ -78,7 +87,9 @@ class resourcesDAO:
         cursor = self.conn.cursor()
         query = "select res_ID, category, price, qty from resources natural inner join supplies natural inner join  suppliersaddress natural inner join region where category = %s and region = %s;"
         cursor.execute(query, (category, region))
-        result = cursor.fetchone()
+        result = []
+        for row in cursor:
+            result.append(row)
         return result
 
     def getResourcesBySupplierCity(self, city):
@@ -106,6 +117,15 @@ class resourcesDAO:
             result.append(row)
         return result
 
+    def getResourcesRequestedByApplicantID(self, apl_ID):
+        cursor = self.conn.cursor()
+        query = "select res_ID, category, price, qty from resources natural inner join request where apl_ID = %s;"
+        cursor.execute(query,(apl_ID,))
+        result = []
+        for row in cursor:
+            result.append(row)
+        return result
+
     def getResourcesByPrice(self, price):
         cursor = self.conn.cursor()
         query = "select res_ID, category, price, qty from resources;"
@@ -118,7 +138,7 @@ class resourcesDAO:
     def getResourcesByCategoryandQty(self, category, qty):
         cursor = self.conn.cursor()
         query = "select res_ID, category, price, qty from resources where category=%s and qty=%s;"
-        cursor.execute(query)
+        cursor.execute(query,(category,qty))
         result = []
         for row in cursor:
             result.append(row)

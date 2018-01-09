@@ -39,6 +39,24 @@ class ResourcesHandler:
             resource = self.build_resources_dict(row)
             return jsonify(Resource = resource)
 
+    def getResourcesAvailable(self):
+        dao = resourcesDAO()
+        resources = dao.getResourcesAvailable()
+        result_list = []
+        for row in resources:
+            result = self.build_resources_dict(row)
+            result_list.append(result)
+        return jsonify(Resources = result_list)
+
+    def getResourcesInNeed(self):
+        dao = resourcesDAO()
+        resources = dao.getResourcesAvailable()
+        result_list = []
+        for row in resources:
+            result = self.build_resources_dict(row)
+            result_list.append(result)
+        return jsonify(Resources = result_list)
+
     def searchResources(self, args):
         category = args.get("category")
         qty = args.get("qty")
@@ -56,7 +74,7 @@ class ResourcesHandler:
         elif (len(args) == 1) and category:
             resources_list = dao.getResourcesByCategory(category)
         elif (len(args) == 1) and qty:
-            resources_list = dao.getResourcesAvailable(qty)
+            resources_list = dao.getResourcesByQty(qty)
         elif (len(args) == 1)  and price:
             resources_list = dao.getResourcesByPrice(price)
         elif (len(args) == 1) and region:
@@ -80,6 +98,18 @@ class ResourcesHandler:
             result = self.build_suppliers_dict(row)
             result_list.append(result)
         return jsonify(Suppliers=result_list)
+
+    def getResourcesRequestedByApplicantID(self, apl_ID):
+        dao = resourcesDAO()
+        requests = dao.getResourcesRequestedByApplicantID(apl_ID)
+        if not requests:
+            return jsonify(Error="Part Not Found"), 404
+        requests_list = requests
+        result_list = []
+        for row in requests_list:
+            result = self.build_resources_dict(row)
+            result_list.append(result)
+        return jsonify(Requests=result_list)
 
     def getRequestedResources(self):
         dao = resourcesDAO()
