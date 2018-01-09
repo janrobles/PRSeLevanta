@@ -3,3 +3,5 @@ pg_config = {
     'passwd': 'icom5016',
     'dbname': 'prselevantadb'
 }
+
+

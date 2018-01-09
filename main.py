@@ -72,11 +72,17 @@ def getResourcesById(resourceID):
 
 @app.route('/PRSeLevanta/resourcesavailable')
 def getResourcesAvailable():
-    return ResourcesHandler().getResourcesAvailable()
+    if not request.args:
+        return ResourcesHandler().getResourcesAvailable()
+    else:
+        return ResourcesHandler().searchResourcesAvailable(request.args)
 
 @app.route('/PRSeLevanta/resourcesinneed')
 def getResourcesInNeed():
-    return ResourcesHandler().getResourcesInNeed()
+    if not request.args:
+        return ResourcesHandler().getResourcesInNeed()
+    else:
+        return ResourcesHandler().searchResourcesInNeed(request.args)
 
 @app.route('/PRSeLevanta/suppliers/<int:supp_ID>/resources')
 def getResourcesBySupplierId(supp_ID):

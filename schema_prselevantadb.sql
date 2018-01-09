@@ -133,6 +133,27 @@ insert into Region(city, region) values ('Rio Grande','Carolina');
 insert into Region(city, region) values ('Trujillo Alto','Carolina');
 insert into Region(city, region) values ('Vieques','Carolina');
 
+﻿insert into Suppliers(first_name,last_name) values('Juan','Colon');
+
+insert into SuppliersAddress(supp_id, rid, street, urb_conde, num, city, state, zip, gps_local) values((select supp_ID from suppliers where first_name='Juan' and last_name='Colon'),(select rid from region where region.city = 'San Juan'), 'ave ashford', 'ashford palace', 1, 'San Juan', 'PR', 00907, 'Guaynabo');
+
+insert into Accounts(acct_num,supp_ID,balance) values ( 4163279,(select supp_ID from suppliers where first_name='Juan' and last_name='Colon'),1000);
+
+insert into Resources(category,price,qty) values('pgenerator',4000,5);
+
+insert into PowerGenerator(res_ID,watts) values ((select res_ID from resources where category = 'pgenerator'), 7250);
+
+insert into Supplies(res_ID,supp_ID) values ((select res_ID from resources where category = 'pgenerator'),(select supp_ID from suppliers where first_name='Juan' and last_name='Colon'));
+
+insert into Request(res_ID,apl_ID) values((select res_ID from resources where category = 'pgenerator'),(select apl_ID from applicants where first_name='Jan' and last_name='Robles'));
+
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Jan' and last_name='Robles')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Juan' and last_name='Colon')),'2018-01-01', 'completed', 4000);
+
+--insert into owns(trans_ID,apl_ID) values
+--insert into fulfill(trnas_ID,supp_ID) values
+
+insert into purchase(res_ID,trans_ID,pprice) values((select res_ID from resources where category = 'pgenerator'), (select trans_ID from transactions where card_num =(select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Jan' and last_name='Robles')) and acct_num = (select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Juan' and last_name='Colon'))), 4000);
+
 --Useful queries--
 
 --select * from applicantsaddress;

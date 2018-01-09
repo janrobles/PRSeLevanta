@@ -50,12 +50,40 @@ class ResourcesHandler:
 
     def getResourcesInNeed(self):
         dao = resourcesDAO()
-        resources = dao.getResourcesAvailable()
+        resources = dao.getResourcesInNeed()
         result_list = []
         for row in resources:
             result = self.build_resources_dict(row)
             result_list.append(result)
         return jsonify(Resources = result_list)
+
+    def searchResourcesInNeed(self, args):
+        category = args.get("category")
+        dao = resourcesDAO()
+        resources_list = []
+        if (len(args) == 1) and category:
+            resources_list = dao.getResourcesInNeedByCategoryKeyword(category)
+        else:
+            return jsonify(Error = "Malformed query string"), 400
+        result_list = []
+        for row in resources_list:
+            result = self.build_resources_dict(row)
+            result_list.append(result)
+        return jsonify(Resources=result_list)
+
+    def searchResourcesAvailable(self, args):
+        category = args.get("category")
+        dao = resourcesDAO()
+        resources_list = []
+        if (len(args) == 1) and category:
+            resources_list = dao.getResourcesAvailableByCategoryKeyword(category)
+        else:
+            return jsonify(Error = "Malformed query string"), 400
+        result_list = []
+        for row in resources_list:
+            result = self.build_resources_dict(row)
+            result_list.append(result)
+        return jsonify(Resources=result_list)
 
     def searchResources(self, args):
         category = args.get("category")
