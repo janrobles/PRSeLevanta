@@ -246,6 +246,86 @@ insert into Batteries(res_ID,kind) values ((select res_ID from resources where c
 insert into Supplies(res_ID,supp_ID) values ((select res_ID from resources where category = 'batteries'),(select supp_ID from suppliers where first_name='Yadier' and last_name='Molina'));
 
 
+--janrobles values
+insert into Suppliers(first_name,last_name) values('Paul','Abad');
+insert into Suppliers(first_name,last_name) values('Edgardo','Perez');
+insert into Suppliers(first_name,last_name) values('Armando','Vega');
+insert into Suppliers(first_name,last_name) values('Nicole','Ortiz');
+insert into Suppliers(first_name,last_name) values('Evelyn','Martinez');
+insert into Suppliers(first_name,last_name) values('Luis','Pabon');
+insert into Suppliers(first_name,last_name) values('Tony','Cruz');
+insert into Suppliers(first_name,last_name) values('Tito','Camacho');
+insert into Suppliers(first_name,last_name) values('Hector','Pagan');
+insert into Suppliers(first_name,last_name) values('Joe','Jimenez');
+insert into Suppliers(first_name,last_name) values('Randy','Feliciano');
+insert into Suppliers(first_name,last_name) values('Natasha','Ives');
+insert into Suppliers(first_name,last_name) values('Derek','Jeter');
+insert into Suppliers(first_name,last_name) values('Aaron','Judge');
+insert into Suppliers(first_name,last_name) values('Giancarlo','Stanton');
+
+insert into Resources(category,price,qty) values('batteries',3.00,100);
+insert into Batteries(res_ID,kind) values ((select res_ID from resources where category = 'batteries'), AA);
+
+insert into Resources(category,price,qty) values('clothing',25.00,30);
+insert into Clothing(res_ID,size, gender) values((select res_ID from resources where category = 'clothing'),'S', 'F')
+
+insert into Resources(category,price,qty) values('clothing',10.99,20);
+insert into Clothing(res_ID,size, gender) values((select res_ID from resources where category = 'clothing'),'M', 'F')
+
+insert into Resources(category,price,qty) values('clothing',12.00,25);
+insert into Clothing(res_ID,size, gender) values((select res_ID from resources where category = 'clothing'),'L', 'M')
+
+insert into Resources(category,price,qty) values('clothing',35.00,31);
+insert into Clothing(res_ID,size, gender) values((select res_ID from resources where category = 'clothing'),'XL', 'M')
+
+insert into Resources(category,price,qty) values('food',5.70,50);
+insert into Food(res_ID,kind) values ((select res_ID from resources where category = 'food'), 'arroz')
+insert into Resources(category,price,qty) values('food',1.00,3000);
+insert into Food(res_ID,kind) values ((select res_ID from resources where category = 'food'), 'habichuelas')
+                                      
+insert into Resources(category,price,qty) values('food',4.00,75);
+insert into Food(res_ID,kind) values ((select res_ID from resources where category = 'food'), 'corned beef')
+
+insert into Resources(category,price,qty) values('food',3.80,80);
+insert into Food(res_ID,kind) values ((select res_ID from resources where category = 'food'), 'jamonilla')
+
+insert into Resources(category,price,qty) values('food',0.50,44);
+insert into Food(res_ID,kind) values ((select res_ID from resources where category = 'food'), 'habichuelas')
+
+
+insert into Resources(category,price,qty) values('pgenerator',1500.00,20);
+insert into PowerGenerator(res_ID,watts) values ((select res_ID from resources where category = 'pgenerator'), 7250);
+
+insert into Resources(category,price,qty) values('pgenerator',1800.00,13);
+insert into PowerGenerator(res_ID,watts) values ((select res_ID from resources where category = 'pgenerator'), 7550);
+
+insert into Resources(category,price,qty) values('pgenerator',700.00,21);
+insert into PowerGenerator(res_ID,watts) values ((select res_ID from resources where category = 'pgenerator'), 1250);
+
+insert into Resources(category,price,qty) values('pgenerator',800.00,10);
+insert into PowerGenerator(res_ID,watts) values ((select res_ID from resources where category = 'pgenerator'), 1450);
+
+insert into Resources(category,price,qty) values('pgenerator',845.00,15);
+insert into PowerGenerator(res_ID,watts) values ((select res_ID from resources where category = 'pgenerator'), 1650);
+
+
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Jan' and last_name='Robles')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Juan' and last_name='Colon')),'2018-01-01', 'completed', 150);
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Jan' and last_name='Toro')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Paul' and last_name='Abad')),'2018-01-01', 'completed', 400);
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Eric' and last_name='Barbosa')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Armando' and last_name='Vega')),'2018-01-01', 'completed', 800);
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Jan' and last_name='Robles')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Evelyn' and last_name='Martinez')),'2018-01-01', 'completed', 731);
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Jan' and last_name='Toro')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Randy' and last_name='Feliciano')),'2018-01-01', 'completed', 15);
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Eric' and last_name='Barbosa')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Hector' and last_name='Pagan')),'2018-01-01', 'completed', 22);
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Jan' and last_name='Robles')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Joe' and last_name='Jimenez')),'2018-01-01', 'completed', 5);
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Jan' and last_name='Toro')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Nicole' and last_name='Ortiz')),'2018-01-01', 'completed', 33);
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Eric' and last_name='Barbosa')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Paul' and last_name='Abad')),'2018-01-01', 'completed', 44);
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Jan' and last_name='Robles')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Juan' and last_name='Colon')),'2018-01-01', 'completed', 200);
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Jan' and last_name='Toro')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Aaron' and last_name='Judge')),'2018-01-01', 'completed', 150);
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Eric' and last_name='Barbosa')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Derek' and last_name='Jeter')),'2018-01-01', 'completed', 75);
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Jan' and last_name='Robles')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Giancarlo' and last_name='Stanton')),'2018-01-01', 'completed', 99);
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Jan' and last_name='Toro')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Edgardo' and last_name='Perez')),'2018-01-01', 'completed', 12);
+insert into transactions(card_num,acct_num,trans_date,status,amount) values((select card_num from creditcards natural inner join applicants where apl_ID = (select apl_ID from applicants where first_name='Eric' and last_name='Barbosa')),(select acct_num from accounts natural inner join suppliers where supp_ID = (select supp_ID from suppliers where first_name='Luis' and last_name='Pabon')),'2018-01-01', 'completed', 23);
+
+
 
 
 
