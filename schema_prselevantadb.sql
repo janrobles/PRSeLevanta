@@ -170,6 +170,81 @@ insert into purchase(res_ID,trans_ID,pprice) values((select res_ID from resource
 
 --select * from applicantsaddress natural inner join applicants;
 
+--inserts jan toro
+insert into Applicants(first_name,last_name) values('Jeremy','Cardona');
+
+insert into ApplicantsAddress(apl_ID, rid, street, urb_conde, num, city, state, zip, gps_local) values ((select apl_ID from applicants where first_name='Jeremy' and last_name='Cardona'),(select rid from region where region.city = 'Mayaguez-Aguadilla'), 'calle flore', 'Bosque51', 420, 'Mayaguez', 'PR', 00680, 'New York');
+
+insert into Suppliers(first_name,last_name) values('Wilfredo','Gomez');
+
+insert into SuppliersAddress(supp_id, rid, street, urb_conde, num, city, state, zip, gps_local) values((select supp_ID from suppliers where first_name='Wilfredo' and last_name='Gomez'),(select rid from region where region.city = 'Humacao'), 'Calle Flamboyan', 'Los Sauces', 400, 'Humacao', 'PR', 00791, 'Humacao');
+
+insert into Resources(category,price,qty) values('ice',2.50,10);
+
+insert into Ice(res_ID,size) values ((select res_ID from resources where category = 'ice'), 5);
+
+insert into Supplies(res_ID,supp_ID) values ((select res_ID from resources where category = 'ice'),(select supp_ID from suppliers where first_name='Wilfredo' and last_name='Gomez'));
+
+
+insert into Applicants(first_name,last_name) values('Josue','Rodriguez');
+
+insert into ApplicantsAddress(apl_ID, rid, street, urb_conde, num, city, state, zip, gps_local) values ((select apl_ID from applicants where first_name='Josue' and last_name='Rodriguez'),(select rid from region where region.city = 'Humacao'), 'calle zeni', 'Veredas', 600, 'Gurabo', 'PR', 00793, 'Las Piedras');
+
+insert into Suppliers(first_name,last_name) values('Armani','Caban');
+
+insert into SuppliersAddress(supp_id, rid, street, urb_conde, num, city, state, zip, gps_local) values((select supp_ID from suppliers where first_name='Armani' and last_name='Caban'),(select rid from region where region.city = 'Humacao'), 'Calle Ceiba', 'Candelero', 150, 'Las Piedras', 'PR', 00792, 'Juncos');
+
+insert into Resources(category,price,qty) values('food',0.00,200);
+
+insert into Food(res_ID,kind) values ((select res_ID from resources where category = 'food'), MRE);
+
+insert into Supplies(res_ID,supp_ID) values ((select res_ID from resources where category = 'food'),(select supp_ID from suppliers where first_name='Armani' and last_name='Caban'));
+
+
+insert into Applicants(first_name,last_name) values('Cristiano ','Ronaldo');
+
+insert into ApplicantsAddress(apl_ID, rid, street, urb_conde, num, city, state, zip, gps_local) values ((select apl_ID from applicants where first_name='Cristiano' and last_name='Ronaldo'),(select rid from region where region.city = 'San Juan'), 'calle San Sebastian', 'La Tortuga', 10, 'San Juan', 'PR', 00630, 'Guaynabo');
+
+insert into Suppliers(first_name,last_name) values('Paul','Pogba');
+
+insert into SuppliersAddress(supp_id, rid, street, urb_conde, num, city, state, zip, gps_local) values((select supp_ID from suppliers where first_name='Paul' and last_name='Pogba'),(select rid from region where region.city = 'San Juan'), 'Calle Palo', 'Viejo', 13, 'Cataño', 'PR', 00560, 'Condado');
+
+insert into Resources(category,price,qty) values('medication',0.00,50);
+
+insert into Medication(res_ID,dosis) values ((select res_ID from resources where category = 'medication'), 12);
+
+insert into Supplies(res_ID,supp_ID) values ((select res_ID from resources where category = 'medication'),(select supp_ID from suppliers where first_name='Paul' and last_name='Pogba'));
+
+
+insert into Applicants(first_name,last_name) values('Kobe ','Bryant');
+
+insert into ApplicantsAddress(apl_ID, rid, street, urb_conde, num, city, state, zip, gps_local) values ((select apl_ID from applicants where first_name='Kobe' and last_name='Bryant'),(select rid from region where region.city = 'Carolina'), 'calle Gigante', 'Los Robles', 2, 'Luquillo', 'PR', 00630, 'Fajardo');
+
+insert into Suppliers(first_name,last_name) values('Paul','Pogba');
+
+insert into SuppliersAddress(supp_id, rid, street, urb_conde, num, city, state, zip, gps_local) values((select supp_ID from suppliers where first_name='Michael' and last_name='Jordan'),(select rid from region where region.city = 'Carolina'), 'Calle Air', 'Tiro Libre', 23, 'Canovanas', 'PR', 00240, 'Ceiba');
+
+insert into Resources(category,price,qty) values('water',0.00,50);
+
+insert into Water(res_ID,size) values ((select res_ID from resources where category = 'water'), 16);
+
+insert into Supplies(res_ID,supp_ID) values ((select res_ID from resources where category = 'water'),(select supp_ID from suppliers where first_name='Michael' and last_name='Jordan'));
+
+
+insert into Applicants(first_name,last_name) values('Carlos','Beltran');
+
+insert into ApplicantsAddress(apl_ID, rid, street, urb_conde, num, city, state, zip, gps_local) values ((select apl_ID from applicants where first_name='Carlos' and last_name='Beltran'),(select rid from region where region.city = 'Guayama'), 'calle brujos', 'Los brujos', 2, 'Guayama', 'PR', 00630, 'Patillas');
+
+insert into Suppliers(first_name,last_name) values('Paul','Pogba');
+
+insert into SuppliersAddress(supp_id, rid, street, urb_conde, num, city, state, zip, gps_local) values((select supp_ID from suppliers where first_name='Yadier' and last_name='Molina'),(select rid from region where region.city = 'Guayama'), 'Calle Home', 'Home Plate', 4, 'Salinas', 'PR', 00240, 'Ponce');
+
+insert into Resources(category,price,qty) values('batteries',5.00,300);
+
+insert into Batteries(res_ID,kind) values ((select res_ID from resources where category = 'batteries'), AA);
+
+insert into Supplies(res_ID,supp_ID) values ((select res_ID from resources where category = 'batteries'),(select supp_ID from suppliers where first_name='Yadier' and last_name='Molina'));
+
 
 
 
