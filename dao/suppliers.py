@@ -169,5 +169,4 @@ class suppliersDAO:
         cursor.execute(query, (supp_ID, rcity,street,urb_conde,num,city,state,zip,gps_local))
         self.conn.commit()
 
-    def getSuppliersByNameAndLastname(self, name, lastname):
-        pass
+  

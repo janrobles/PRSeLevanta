@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b6ee11b-c562-4154-ad14-e852bcc74174" name="Default" comment="applicants dao">
-      <change beforePath="" afterPath="$PROJECT_DIR$/templates/SupplierSignUp.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dao/applicants.py" afterPath="$PROJECT_DIR$/dao/applicants.py" />
       <change beforePath="$PROJECT_DIR$/dao/suppliers.py" afterPath="$PROJECT_DIR$/dao/suppliers.py" />
-      <change beforePath="$PROJECT_DIR$/handler/applicants.py" afterPath="$PROJECT_DIR$/handler/applicants.py" />
-      <change beforePath="$PROJECT_DIR$/handler/suppliers.py" afterPath="$PROJECT_DIR$/handler/suppliers.py" />
-      <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change beforePath="$PROJECT_DIR$/templates/applicantform.html" afterPath="$PROJECT_DIR$/templates/ApplicantSignUp.html" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
     </list>
     <ignored path="PRSeLevanta.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,7 +15,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/PRSeLevanta$main.coverage" NAME="main Coverage Results" MODIFIED="1516862031075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PRSeLevanta$main.coverage" NAME="main Coverage Results" MODIFIED="1516863023183" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -35,7 +28,7 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="1152">
               <caret line="71" column="12" lean-forward="false" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
               <folding>
                 <element signature="e#45#102#0" expanded="true" />
@@ -47,7 +40,7 @@
       <file leaf-file-name="SupplierSignUp.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/SupplierSignUp.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42">
+            <state relative-caret-position="54">
               <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
               <folding />
             </state>
@@ -57,7 +50,7 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
+            <state relative-caret-position="540">
               <caret line="30" column="32" lean-forward="false" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
               <folding />
             </state>
@@ -67,28 +60,29 @@
       <file leaf-file-name="suppliers.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dao/suppliers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
+            <state relative-caret-position="1998">
               <caret line="112" column="54" lean-forward="false" selection-start-line="112" selection-start-column="54" selection-end-line="112" selection-end-column="54" />
               <folding>
-                <marker date="1516862030899" expanded="true" signature="502:525" ph="select * fro... suppliers" />
-                <marker date="1516862030899" expanded="true" signature="750:780" ph="select * fro... suppliersaddress" />
-                <marker date="1516862030899" expanded="true" signature="1001:1166" ph="select supp_... suppliers" />
-                <marker date="1516862030899" expanded="true" signature="1393:1435" ph="select * fro... suppliers" />
-                <marker date="1516862030899" expanded="true" signature="1637:1682" ph="select * fro... suppliers" />
-                <marker date="1516862030899" expanded="true" signature="1924:2028" ph="select supp_... suppliers" />
-                <marker date="1516862030899" expanded="true" signature="2268:2400" ph="select supp_... suppliers" />
-                <marker date="1516862030899" expanded="true" signature="2666:2795" ph="select supp_... suppliers" />
-                <marker date="1516862030899" expanded="true" signature="3105:3305" ph="select supp_... suppliers" />
-                <marker date="1516862030899" expanded="true" signature="3597:3706" ph="select supp_... suppliers" />
-                <marker date="1516862030899" expanded="true" signature="3986:4166" ph="select supp_... suppliers" />
-                <marker date="1516862030899" expanded="true" signature="4465:4557" ph="select * fro... suppliers" />
-                <marker date="1516862030899" expanded="true" signature="4817:4933" ph="select supp_... accounts" />
-                <marker date="1516862030899" expanded="true" signature="5182:5277" ph="select res_I... resources" />
-                <marker date="1516862030899" expanded="true" signature="5532:5659" ph="select supp_... supplies" />
-                <marker date="1516862030899" expanded="true" signature="5922:6067" ph="select supp_... suppliers" />
-                <marker date="1516862030899" expanded="true" signature="6320:6396" ph="insert into Suppliers... " />
-                <marker date="1516862030899" expanded="true" signature="6705:6891" ph="insert into SuppliersAddress... " />
-                <marker date="1516862030899" expanded="true" signature="6830:6868" ph="select rid f... Region" />
+                <marker date="1516862898445" expanded="true" signature="100:7019" ph="..." />
+                <marker date="1516862898445" expanded="true" signature="502:525" ph="select * fro... suppliers" />
+                <marker date="1516862898445" expanded="true" signature="750:780" ph="select * fro... suppliersaddress" />
+                <marker date="1516862898445" expanded="true" signature="1001:1166" ph="select supp_... suppliers" />
+                <marker date="1516862898445" expanded="true" signature="1393:1435" ph="select * fro... suppliers" />
+                <marker date="1516862898445" expanded="true" signature="1637:1682" ph="select * fro... suppliers" />
+                <marker date="1516862898445" expanded="true" signature="1924:2028" ph="select supp_... suppliers" />
+                <marker date="1516862898445" expanded="true" signature="2268:2400" ph="select supp_... suppliers" />
+                <marker date="1516862898445" expanded="true" signature="2666:2795" ph="select supp_... suppliers" />
+                <marker date="1516862898445" expanded="true" signature="3105:3305" ph="select supp_... suppliers" />
+                <marker date="1516862898445" expanded="true" signature="3597:3706" ph="select supp_... suppliers" />
+                <marker date="1516862898445" expanded="true" signature="3986:4166" ph="select supp_... suppliers" />
+                <marker date="1516862898445" expanded="true" signature="4465:4557" ph="select * fro... suppliers" />
+                <marker date="1516862898445" expanded="true" signature="4817:4933" ph="select supp_... accounts" />
+                <marker date="1516862898445" expanded="true" signature="5182:5277" ph="select res_I... resources" />
+                <marker date="1516862898445" expanded="true" signature="5532:5659" ph="select supp_... supplies" />
+                <marker date="1516862898445" expanded="true" signature="5922:6067" ph="select supp_... suppliers" />
+                <marker date="1516862898445" expanded="true" signature="6320:6396" ph="insert into Suppliers... " />
+                <marker date="1516862898445" expanded="true" signature="6705:6891" ph="insert into SuppliersAddress... " />
+                <marker date="1516862898445" expanded="true" signature="6830:6868" ph="select rid f... Region" />
               </folding>
             </state>
           </provider>
@@ -97,8 +91,8 @@
       <file leaf-file-name="applicants.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dao/applicants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="135" column="13" lean-forward="true" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
+            <state relative-caret-position="2412">
+              <caret line="135" column="13" lean-forward="false" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
               <folding>
                 <marker date="1516854067613" expanded="true" signature="504:528" ph="select * fro... applicants" />
                 <marker date="1516854067613" expanded="true" signature="754:785" ph="select * fro... applicantsaddress" />
@@ -126,7 +120,7 @@
       <file leaf-file-name="suppliers.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/handler/suppliers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
+            <state relative-caret-position="-857">
               <caret line="95" column="28" lean-forward="false" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
               <folding />
             </state>
@@ -207,7 +201,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -234,7 +228,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -566,9 +560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="60" column="35" lean-forward="false" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -576,9 +567,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -639,9 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="60" column="35" lean-forward="false" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -649,9 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -712,9 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="60" column="35" lean-forward="false" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -722,9 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -763,9 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="19" column="24" lean-forward="false" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -773,9 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -826,9 +796,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
           <caret line="43" column="85" lean-forward="false" selection-start-line="43" selection-start-column="85" selection-end-line="43" selection-end-column="85" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -843,9 +810,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="900">
           <caret line="52" column="44" lean-forward="false" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,13 +853,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="37" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/SupplierSignUp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
+        <state relative-caret-position="54">
           <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
           <folding />
         </state>
@@ -903,7 +866,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="1152">
           <caret line="71" column="12" lean-forward="false" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
           <folding>
             <element signature="e#45#102#0" expanded="true" />
@@ -915,13 +878,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="27" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
+        <state relative-caret-position="540">
           <caret line="30" column="32" lean-forward="false" selection-start-line="30" selection-start-column="32" selection-end-line="30" selection-end-column="32" />
           <folding />
         </state>
@@ -929,8 +891,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dao/applicants.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="135" column="13" lean-forward="true" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
+        <state relative-caret-position="2412">
+          <caret line="135" column="13" lean-forward="false" selection-start-line="135" selection-start-column="13" selection-end-line="135" selection-end-column="13" />
           <folding>
             <marker date="1516854067613" expanded="true" signature="504:528" ph="select * fro... applicants" />
             <marker date="1516854067613" expanded="true" signature="754:785" ph="select * fro... applicantsaddress" />
@@ -956,35 +918,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dao/suppliers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
+        <state relative-caret-position="1998">
           <caret line="112" column="54" lean-forward="false" selection-start-line="112" selection-start-column="54" selection-end-line="112" selection-end-column="54" />
           <folding>
-            <marker date="1516862030899" expanded="true" signature="502:525" ph="select * fro... suppliers" />
-            <marker date="1516862030899" expanded="true" signature="750:780" ph="select * fro... suppliersaddress" />
-            <marker date="1516862030899" expanded="true" signature="1001:1166" ph="select supp_... suppliers" />
-            <marker date="1516862030899" expanded="true" signature="1393:1435" ph="select * fro... suppliers" />
-            <marker date="1516862030899" expanded="true" signature="1637:1682" ph="select * fro... suppliers" />
-            <marker date="1516862030899" expanded="true" signature="1924:2028" ph="select supp_... suppliers" />
-            <marker date="1516862030899" expanded="true" signature="2268:2400" ph="select supp_... suppliers" />
-            <marker date="1516862030899" expanded="true" signature="2666:2795" ph="select supp_... suppliers" />
-            <marker date="1516862030899" expanded="true" signature="3105:3305" ph="select supp_... suppliers" />
-            <marker date="1516862030899" expanded="true" signature="3597:3706" ph="select supp_... suppliers" />
-            <marker date="1516862030899" expanded="true" signature="3986:4166" ph="select supp_... suppliers" />
-            <marker date="1516862030899" expanded="true" signature="4465:4557" ph="select * fro... suppliers" />
-            <marker date="1516862030899" expanded="true" signature="4817:4933" ph="select supp_... accounts" />
-            <marker date="1516862030899" expanded="true" signature="5182:5277" ph="select res_I... resources" />
-            <marker date="1516862030899" expanded="true" signature="5532:5659" ph="select supp_... supplies" />
-            <marker date="1516862030899" expanded="true" signature="5922:6067" ph="select supp_... suppliers" />
-            <marker date="1516862030899" expanded="true" signature="6320:6396" ph="insert into Suppliers... " />
-            <marker date="1516862030899" expanded="true" signature="6705:6891" ph="insert into SuppliersAddress... " />
-            <marker date="1516862030899" expanded="true" signature="6830:6868" ph="select rid f... Region" />
+            <marker date="1516862898445" expanded="true" signature="100:7019" ph="..." />
+            <marker date="1516862898445" expanded="true" signature="502:525" ph="select * fro... suppliers" />
+            <marker date="1516862898445" expanded="true" signature="750:780" ph="select * fro... suppliersaddress" />
+            <marker date="1516862898445" expanded="true" signature="1001:1166" ph="select supp_... suppliers" />
+            <marker date="1516862898445" expanded="true" signature="1393:1435" ph="select * fro... suppliers" />
+            <marker date="1516862898445" expanded="true" signature="1637:1682" ph="select * fro... suppliers" />
+            <marker date="1516862898445" expanded="true" signature="1924:2028" ph="select supp_... suppliers" />
+            <marker date="1516862898445" expanded="true" signature="2268:2400" ph="select supp_... suppliers" />
+            <marker date="1516862898445" expanded="true" signature="2666:2795" ph="select supp_... suppliers" />
+            <marker date="1516862898445" expanded="true" signature="3105:3305" ph="select supp_... suppliers" />
+            <marker date="1516862898445" expanded="true" signature="3597:3706" ph="select supp_... suppliers" />
+            <marker date="1516862898445" expanded="true" signature="3986:4166" ph="select supp_... suppliers" />
+            <marker date="1516862898445" expanded="true" signature="4465:4557" ph="select * fro... suppliers" />
+            <marker date="1516862898445" expanded="true" signature="4817:4933" ph="select supp_... accounts" />
+            <marker date="1516862898445" expanded="true" signature="5182:5277" ph="select res_I... resources" />
+            <marker date="1516862898445" expanded="true" signature="5532:5659" ph="select supp_... supplies" />
+            <marker date="1516862898445" expanded="true" signature="5922:6067" ph="select supp_... suppliers" />
+            <marker date="1516862898445" expanded="true" signature="6320:6396" ph="insert into Suppliers... " />
+            <marker date="1516862898445" expanded="true" signature="6705:6891" ph="insert into SuppliersAddress... " />
+            <marker date="1516862898445" expanded="true" signature="6830:6868" ph="select rid f... Region" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/handler/suppliers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
+        <state relative-caret-position="-857">
           <caret line="95" column="28" lean-forward="false" selection-start-line="95" selection-start-column="28" selection-end-line="95" selection-end-column="28" />
           <folding />
         </state>
