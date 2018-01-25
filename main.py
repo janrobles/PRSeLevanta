@@ -1,5 +1,5 @@
 __author__ = 'janrobles,ericbarbosa,jantoro'
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,render_template
 from handler.applicants import ApplicantsHandler
 from handler.resources import ResourcesHandler
 from handler.suppliers import SuppliersHandler
@@ -10,19 +10,23 @@ from handler.transactions import TransactionsHandler
 
 
 
+
 app = Flask(__name__)
 
 @app.route('/')
 def greeting():
-    return 'Hello, this is PRSeLevanta!'
+    return render_template('home.html')
 
 #### Routes of applicants ####
-@app.route('/PRSeLevanta/applicants')
+@app.route('/PRSeLevanta/applicants', methods=['GET','POST'])
 def getAllApplicants():
-    if not request.args:
-        return ApplicantsHandler().getAllApplicantsInfo()
+    if request.method == 'POST':
+        return ApplicantsHandler().insertApplicants(request.form)
     else:
-        return ApplicantsHandler().searchApplicants(request.args)
+        if not request.args:
+            return ApplicantsHandler().getAllApplicantsInfo()
+        else:
+            return ApplicantsHandler().searchApplicants(request.args)
 
 @app.route('/PRSeLevanta/applicants/<int:apl_ID>')
 def getApplicantById(apl_ID):

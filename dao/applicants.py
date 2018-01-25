@@ -129,5 +129,24 @@ class applicantsDAO:
         result = cursor.fetchone()
         return result
 
+    def insert(self, first_name, last_name):
+        cursor = self.conn.cursor()
+        query = "insert into Applicants(first_name,last_name) values (%s,%s) returning apl_ID;"
+        cursor.execute(query,(first_name,last_name))
+        apl_ID = cursor.fetchone()[0]
+        self.conn.commit()
+        return apl_ID
+
+    def insertAddress(self, apl_ID, street, urb_conde, num, city, state, zip, gps_local):
+        rcity=city
+        cursor = self.conn.cursor()
+        query = "insert into ApplicantsAddress(apl_ID, rid,street, urb_conde, num,city,state,zip,gps_local) values " \
+                "(%s, (select rid from Region where city = %s),%s,%s,%s,%s,%s,%s,%s);"
+        cursor.execute(query, (apl_ID, rcity,street,urb_conde,num,city,state,zip,gps_local))
+        self.conn.commit()
+
+
+
+
 
 

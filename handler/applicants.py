@@ -13,6 +13,20 @@ class ApplicantsHandler:
         result['last_name'] = row[2]
         return result
 
+    def build_applicants_attributes(self, apl_ID,first_name,last_name,street,urb_conde,num,city,state,zip,gps_local):
+        result = {}
+        result['apl_ID'] = apl_ID
+        result['first_name'] = first_name
+        result['last_name'] = last_name
+        result['street'] = street
+        result['urb_conde'] = urb_conde
+        result['num']= num
+        result['city'] = city
+        result['state']=state
+        result['zip']=zip
+        result['gps_local']=gps_local
+        return result
+
     def build_creditcards_dict(self,row):
         result = {}
 
@@ -129,4 +143,27 @@ class ApplicantsHandler:
         else:
             creditcards = self.build_creditcards_dict(row)
             return jsonify(CreditCards = creditcards)
+
+    def insertApplicants(self, form):
+        if len(form) != 9:
+            return jsonify(Error = "Malform post request"),400
+        else:
+            first_name = form['first_name']
+            last_name = form['last_name']
+            street = form['street']
+            urb_conde = form['urb_conde']
+            num = form['num']
+            city = form['city']
+            state = form ['state']
+            zip = form['zip']
+            gps_local = form['gps_local']
+            if first_name and last_name and street and urb_conde and num and city and state and zip and gps_local:
+                dao = applicantsDAO()
+                apl_id = dao.insert(first_name,last_name)
+                dao.insertAddress(apl_id,street,urb_conde,num,city,state,zip,gps_local)
+                result = self.build_applicants_attributes(apl_id,first_name,last_name, street,urb_conde,num,city,state,zip,gps_local)
+                return jsonify(Applicant = result),201
+            else:
+                return jsonify(Error="Unexpected attributes in post request"), 400
+
 
