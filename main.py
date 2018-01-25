@@ -36,14 +36,21 @@ def getApplicantById(apl_ID):
 def getCreditCardByApl_ID(apl_ID):
     return ApplicantsHandler().getCreditCardsByApl_ID(apl_ID)
 
+@app.route('/PRSeLevanta/ApplicantSignUp')
+def ApplicantForm():
+    return render_template('ApplicantSignUp.html')
+
 
 ##### Routes of Suppliers  #####
-@app.route('/PRSeLevanta/suppliers')
+@app.route('/PRSeLevanta/suppliers', methods=['GET','POST'])
 def getAllSuppliers():
-     if not request.args:
-        return SuppliersHandler().getAllSuppliersInfo()
-     else:
-        return SuppliersHandler().searchSuppliers(request.args)
+    if request.method == 'POST':
+        return SuppliersHandler().insertSuppliers(request.form)
+    else:
+        if not request.args:
+            return SuppliersHandler().getAllSuppliersInfo()
+        else:
+            return SuppliersHandler().searchSuppliers(request.args)
 
 @app.route('/PRSeLevanta/suppliers/<int:supp_ID>')
 def getSupplierById(supp_ID):
@@ -60,6 +67,10 @@ def getSuppliersByResourceCategory(category):
 @app.route('/PRSeLevanta/suppliers/<int:supp_ID>/accounts')
 def getAccountsBySupp_ID(supp_ID):
     return SuppliersHandler().getAccountsBySupp_ID(supp_ID)
+
+@app.route('/PRSeLevanta/SupplierSignUp')
+def SupplierForm():
+    return render_template('SupplierSignUp.html')
 
 
 #### Routes of Resources ####

@@ -113,10 +113,10 @@ class applicantsDAO:
             result.append(row)
         return result
 
-    def getApplicantsByLastname(self, last_name):
+    def getApplicantsByNameAndLastname(self, first_name, last_name):
         cursor = self.conn.cursor()
-        query = "select * from applicants where last_name = %s;"
-        cursor.execute(query, (last_name,))
+        query = "select apl_ID,first_name,last_name from applicants where first_name= %s and last_name = %s;"
+        cursor.execute(query, (first_name, last_name))
         result = []
         for row in cursor:
             result.append(row)

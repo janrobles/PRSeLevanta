@@ -10,12 +10,12 @@
 <!--<a href="http://127.0.0.1:5000/about">go to about</a>-->
 <br>
     <b>Applicant </b>
-    <form action="http://127.0.0.1:5000/applicant" ><br>
+    <form action="http://127.0.0.1:5000/PRSeLevanta/applicants" method="get"><br>
   First name:<br>
-  <input type="text" name="firstname">
+  <input type="text" name="first_name">
   <br>
   Last name:<br>
-  <input type="text" name="lastname">
+  <input type="text" name="last_name">
   <br>
   <input type="submit" value="Submit"><br>
   </form>
@@ -23,12 +23,12 @@
 
 
    <br> <b>Supplier</b><br><br>
-    <form action="http://127.0.0.1:5000/supplier">
+    <form action="http://127.0.0.1:5000/PRSeLevanta/suppliers" method="get">
   First name:<br>
-  <input type="text" name="firstname">
+  <input type="text" name="first_name">
   <br>
   Last name:<br>
-  <input type="text" name="lastname">
+  <input type="text" name="last_name">
   <br>
   <input type="submit" value="Submit"><br>
   </form>
@@ -39,12 +39,12 @@
 <br>
 
 
-<button onclick = "window.location.href='applicantform.html';">New Applicant</button>
-    <input type="button" onclick = "window.location.href='applicantform.html';"value="link" />
+<form action="http://127.0.0.1:5000/PRSeLevanta/ApplicantSignUp">
+    <input type="submit" value="New Applicant" />
+</form>
 
-
-<form action="http://127.0.0.1:5000/supplierform">
-    <input type="submit" value="New Supplier  " />
+<form action="http://127.0.0.1:5000/PRSeLevanta/SupplierSignUp">
+    <input type="submit" value="New Supplier" />
 </form>
 <br>
 <br>

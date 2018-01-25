@@ -108,10 +108,10 @@ class suppliersDAO:
             result.append(row)
         return result
 
-    def getSuppliersByLastname(self, last_name):
+    def getSuppliersByNameAndLastname(self, first_name, last_name):
         cursor = self.conn.cursor()
-        query = "select * from suppliers where last_name = %s;"
-        cursor.execute(query, (last_name,))
+        query = "select supp_ID, first_name, last_name from suppliers where first_name =%s and last_name = %s;"
+        cursor.execute(query, (first_name,last_name))
         result = []
         for row in cursor:
             result.append(row)
@@ -152,3 +152,22 @@ class suppliersDAO:
         for row in cursor:
             result.append(row)
         return result
+
+    def insert(self, first_name, last_name):
+        cursor = self.conn.cursor()
+        query = "insert into Suppliers(first_name,last_name) values (%s,%s) returning supp_ID;"
+        cursor.execute(query,(first_name,last_name))
+        supp_ID = cursor.fetchone()[0]
+        self.conn.commit()
+        return supp_ID
+
+    def insertAddress(self, supp_ID, street, urb_conde, num, city, state, zip, gps_local):
+        rcity=city
+        cursor = self.conn.cursor()
+        query = "insert into SuppliersAddress(supp_ID, rid,street, urb_conde, num,city,state,zip,gps_local) values " \
+                "(%s, (select rid from Region where city = %s),%s,%s,%s,%s,%s,%s,%s);"
+        cursor.execute(query, (supp_ID, rcity,street,urb_conde,num,city,state,zip,gps_local))
+        self.conn.commit()
+
+    def getSuppliersByNameAndLastname(self, name, lastname):
+        pass

@@ -13,6 +13,20 @@ class SuppliersHandler:
         result['last_name'] = row[2]
         return result
 
+    def build_suppliers_attributes(self, supp_ID,first_name,last_name,street,urb_conde,num,city,state,zip,gps_local):
+        result = {}
+        result['supp_ID'] = supp_ID
+        result['first_name'] = first_name
+        result['last_name'] = last_name
+        result['street'] = street
+        result['urb_conde'] = urb_conde
+        result['num']= num
+        result['city'] = city
+        result['state']=state
+        result['zip']=zip
+        result['gps_local']=gps_local
+        return result
+
     def build_resources_dict(self,row):
         result = {}
         result['res_ID'] = row[0]
@@ -65,8 +79,8 @@ class SuppliersHandler:
             return jsonify(Supplier = supplier)
 
     def searchSuppliers(self, args):
-        name = args.get("name")
-        lastname = args.get("lastname")
+        name = args.get("first_name")
+        lastname = args.get("last_name")
         location = args.get("location")
         region = args.get("address")
         dao = suppliersDAO()
@@ -79,8 +93,8 @@ class SuppliersHandler:
             suppliers_list = dao.getSuppliersByLocation(location)
         elif (len(args) == 1) and region:
             suppliers_list = dao.getSuppliersByRegion(region)
-        elif (len(args) == 1) and lastname:
-            suppliers_list = dao.getSuppliersByLastname(lastname)
+        elif (len(args) == 2) and name and lastname:
+            suppliers_list = dao.getSuppliersByNameAndLastname(name,lastname)
         else:
             return jsonify(Error = "Malformed query string"), 400
         result_list = []
@@ -124,3 +138,25 @@ class SuppliersHandler:
             result = self.build_suppliers_dict(row)
             result_list.append(result)
         return jsonify(Suppliers=result_list)
+
+    def insertSuppliers(self, form):
+        if len(form) != 9:
+            return jsonify(Error = "Malform post request"),400
+        else:
+            first_name = form['first_name']
+            last_name = form['last_name']
+            street = form['street']
+            urb_conde = form['urb_conde']
+            num = form['num']
+            city = form['city']
+            state = form ['state']
+            zip = form['zip']
+            gps_local = form['gps_local']
+            if first_name and last_name and street and urb_conde and num and city and state and zip and gps_local:
+                dao = suppliersDAO()
+                supp_ID = dao.insert(first_name,last_name)
+                dao.insertAddress(supp_ID,street,urb_conde,num,city,state,zip,gps_local)
+                result = self.build_suppliers_attributes(supp_ID,first_name,last_name, street,urb_conde,num,city,state,zip,gps_local)
+                return jsonify(Supplier = result),201
+            else:
+                return jsonify(Error="Unexpected attributes in post request"), 400

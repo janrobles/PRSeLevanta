@@ -110,8 +110,8 @@ class ApplicantsHandler:
             return jsonify(Applicant = applicant)
 
     def searchApplicants(self, args):
-        name = args.get("name")
-        lastname = args.get("lastname")
+        name = args.get("first_name")
+        lastname = args.get("last_name")
         location = args.get("location")
         region = args.get("region")
         dao = applicantsDAO()
@@ -124,8 +124,8 @@ class ApplicantsHandler:
             applicants_list = dao.getApplicantsByLocation(location)
         elif (len(args) == 1) and region:
             applicants_list = dao.getApplicantsByRegion(region)
-        elif (len(args) == 1) and lastname:
-            applicants_list = dao.getApplicantsByLastname(lastname)
+        elif (len(args) == 2) and name and lastname:
+            applicants_list = dao.getApplicantsByNameAndLastname(name, lastname)
         else:
             return jsonify(Error = "Malformed query string"), 400
         result_list = []
