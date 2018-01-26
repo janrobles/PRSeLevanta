@@ -14,6 +14,94 @@ class ResourcesHandler:
         result['qty'] = row[3]
         return result
 
+    def build_request_attributes(self, apl_ID, res_ID):
+        result = {}
+        result['apl_ID'] = apl_ID
+        result['res_ID'] = res_ID
+        return result
+
+    def build_resources_attributes(self, res_ID, category, price, qty):
+        result = {}
+        result['res_ID'] = res_ID
+        result['category'] = category
+        result['price'] = price
+        result['qty'] = qty
+        return result
+
+    def build_clothing_attributes(self, res_ID, category, price, qty, size, gender):
+        result = {}
+        result['res_ID'] = res_ID
+        result['category'] = category
+        result['price'] = price
+        result['qty'] = qty
+        result['size'] = size
+        result['gender'] = gender
+        return result
+
+    def build_food_attributes(self, res_ID, category, price, qty, kind):
+        result = {}
+        result['res_ID'] = res_ID
+        result['category'] = category
+        result['price'] = price
+        result['qty'] = qty
+        result['kind'] = kind
+        return result
+
+    def build_pgenerator_attributes(self, res_ID, category, price, qty, watts):
+        result = {}
+        result['res_ID'] = res_ID
+        result['category'] = category
+        result['price'] = price
+        result['qty'] = qty
+        result['watts'] = watts
+        return result
+
+    def build_batteries_attributes(self, res_ID, category, price, qty, kind):
+        result = {}
+        result['res_ID'] = res_ID
+        result['category'] = category
+        result['price'] = price
+        result['qty'] = qty
+        result['kind'] = kind
+        return result
+
+    def build_ice_attributes(self, res_ID, category, price, qty, size):
+        result = {}
+        result['res_ID'] = res_ID
+        result['category'] = category
+        result['price'] = price
+        result['qty'] = qty
+        result['size'] = size
+        return result
+
+    def build_fuel_attributes(self, res_ID, category, price, qty, kind,size):
+        result = {}
+        result['res_ID'] = res_ID
+        result['category'] = category
+        result['price'] = price
+        result['qty'] = qty
+        result['kind'] = kind
+        result['size'] = size
+        return result
+
+    def build_medication_attributes(self, res_ID, category, price, qty, dosis):
+        result = {}
+        result['res_ID'] = res_ID
+        result['category'] = category
+        result['price'] = price
+        result['qty'] = qty
+        result['dosis'] = dosis
+        return result
+
+    def build_water_attributes(self, res_ID, category, price, qty, size):
+        result = {}
+        result['res_ID'] = res_ID
+        result['category'] = category
+        result['price'] = price
+        result['qty'] = qty
+        result['size'] = size
+        return result
+
     def build_suppliers_dict(self,row):
         result = {}
         result['supp_ID'] = row[0]
@@ -150,4 +238,176 @@ class ResourcesHandler:
             result = self.build_resources_dict(row)
             result_list.append(result)
         return jsonify(Requests = result_list)
+
+    def insertResources(self, form):
+        if len(form) == 4 and form['category']=="food":
+            supp_ID=form['supp_ID']
+            category = form['category']
+            price = form['price']
+            qty = form['qty']
+            kind = form['kind']
+            if supp_ID and category and price and qty and kind:
+                dao = resourcesDAO()
+                res_ID = dao.insert(category, price, qty)
+                dao.insertSupplies(res_ID,supp_ID)
+                dao.insertFood(res_ID, kind)
+                result = self.build_food_attributes(res_ID, category, price, qty, kind)
+                return jsonify(Food=result), 201
+            else:
+                return jsonify(Error="Unexpected attributes in post request"), 400
+
+        elif len(form) == 6 and form['category'] == 'clothing':
+            supp_ID = form['supp_ID']
+            category = form['category']
+            price = form['price']
+            qty = form['qty']
+            size = form['size']
+            gender = form['gender']
+            if supp_ID and category and price and qty and size and gender:
+                dao = resourcesDAO()
+                res_ID = dao.insert(category,price,qty)
+                dao.insertSupplies(res_ID, supp_ID)
+                dao.insertClothing(res_ID,size,gender)
+                result = self.build_clothing_attributes(res_ID,category,price,qty,size,gender)
+                return jsonify(Cloth = result),201
+            else:
+                return jsonify(Error="Unexpected attributes in post request"), 400
+
+        elif len(form) ==5 and form['category']=='pgenerator':
+            supp_ID = form['supp_ID']
+            category = form['category']
+            price = form['price']
+            qty = form['qty']
+            watts = form['watts']
+            if supp_ID and category and price and qty and watts:
+                dao = resourcesDAO()
+                res_ID = dao.insert(category, price, qty)
+                dao.insertSupplies(res_ID, supp_ID)
+                dao.insertPgenerator(res_ID, watts)
+                result = self.build_pgenerator_attributes(res_ID, category, price, qty, watts)
+                return jsonify(Power_Generators=result), 201
+            else:
+                return jsonify(Error="Unexpected attributes in post request"), 400
+
+        elif len(form)== 5 and form['category']=='batteries':
+            supp_ID = form['supp_ID']
+            category = form['category']
+            price = form['price']
+            qty = form['qty']
+            kind = form['kind']
+            if supp_ID and category and price and qty and kind:
+                dao = resourcesDAO()
+                res_ID = dao.insert(category, price, qty)
+                dao.insertSupplies(res_ID, supp_ID)
+                dao.insertBatteries(res_ID, kind)
+                result = self.build_batteries_attributes(res_ID, category, price, qty, kind)
+                return jsonify(Batteries=result), 201
+            else:
+                return jsonify(Error="Unexpected attributes in post request"), 400
+
+        elif len(form)==5 and form['category']=='medication':
+            supp_ID = form['supp_ID']
+            category = form['category']
+            price = form['price']
+            qty = form['qty']
+            dosis = form['dosis']
+            if supp_ID and category and price and qty and dosis:
+                dao = resourcesDAO()
+                res_ID = dao.insert(category, price, qty)
+                dao.insertSupplies(res_ID, supp_ID)
+                dao.insertMedication(res_ID, dosis)
+                result = self.build_medication_attributes(res_ID, category, price, qty, dosis)
+                return jsonify(Medication=result), 201
+            else:
+                return jsonify(Error="Unexpected attributes in post request"), 400
+
+        elif len(form)==5 and form['category']=='ice':
+            supp_ID = form['supp_ID']
+            category = form['category']
+            price = form['price']
+            qty = form['qty']
+            size = form['size']
+            if supp_ID and category and price and qty and size:
+                dao = resourcesDAO()
+                res_ID = dao.insert(category, price, qty)
+                dao.insertSupplies(res_ID, supp_ID)
+                dao.insertIce(res_ID, size)
+                result = self.build_ice_attributes(res_ID, category, price, qty, size)
+                return jsonify(Ice=result), 201
+            else:
+                return jsonify(Error="Unexpected attributes in post request"), 400
+
+        elif len(form)==6 and form['category']=='fuel':
+            supp_ID = form['supp_ID']
+            category = form['category']
+            price = form['price']
+            qty = form['qty']
+            kind = form['kind']
+            size = form['size']
+            if supp_ID and category and price and qty and kind and size:
+                dao = resourcesDAO()
+                res_ID = dao.insert(category, price, qty)
+                dao.insertSupplies(res_ID, supp_ID)
+                dao.insertFuel(res_ID, kind, size)
+                result = self.build_fuel_attributes(res_ID, category, price, qty, kind,size)
+                return jsonify(Fuel=result), 201
+            else:
+                return jsonify(Error="Unexpected attributes in post request"), 400
+
+        elif len(form)==5 and form['category']=='water':
+            supp_ID = form['supp_ID']
+            category = form['category']
+            price = form['price']
+            qty = form['qty']
+            size = form['size']
+            if supp_ID and category and price and qty and size:
+                dao = resourcesDAO()
+                res_ID = dao.insert(category, price, qty)
+                dao.insertSupplies(res_ID, supp_ID)
+                dao.insertWater(res_ID, size)
+                result = self.build_water_attributes(res_ID, category, price, qty, size)
+                return jsonify(Water=result), 201
+            else:
+                return jsonify(Error="Unexpected attributes in post request"), 400
+
+        else:
+            return jsonify(Error="Malform post request"), 400
+
+    def updateResource(self,res_ID,form):
+        dao = resourcesDAO()
+        if not dao.getResourceById(res_ID):
+            return jsonify(Error="Resource not found"), 404
+        else:
+            if len(form) != 4:
+                return jsonify(Error="Malform update request"), 400
+            else:
+                res_ID = form['res_ID']
+                category = form['category']
+                price = form['price']
+                qty = form['qty']
+                if price and qty:
+                    dao.updateResource(price, qty, res_ID)
+                    result = self.build_resources_attributes(res_ID,category,price,qty)
+                    return jsonify(Resource=result), 200
+                else:
+                    return jsonify(Error="Unexpected attributes in updates request"), 400
+
+    def insertRequest(self, form):
+        if len(form) != 2:
+            return jsonify(Error="Malform post request"), 400
+        else:
+            apl_ID = form['apl_ID']
+            res_ID = form['res_ID']
+            if apl_ID and res_ID:
+                dao = resourcesDAO()
+                dao.insertRequest(apl_ID, res_ID)
+                result = self.build_request_attributes(apl_ID, res_ID)
+                return jsonify(Request=result), 201
+            else:
+                return jsonify(Error="Unexpected attributes in post request"), 400
+
+
+
+
+
 

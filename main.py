@@ -32,7 +32,7 @@ def getAllApplicants():
 def getApplicantById(apl_ID):
     return ApplicantsHandler().getApplicantsById(apl_ID)
 
-@app.route('/PRSeLevanta/applicants/<int:apl_ID>/creditcards')
+@app.route('/PRSeLevanta/applicants/<int:apl_ID>/creditcards', methods =['GET','POST'])
 def getCreditCardByApl_ID(apl_ID):
     return ApplicantsHandler().getCreditCardsByApl_ID(apl_ID)
 
@@ -64,9 +64,12 @@ def getSuppliersByResourceId(resourceID):
 def getSuppliersByResourceCategory(category):
     return SuppliersHandler().getSuppliersByResourceCategory(category)
 
-@app.route('/PRSeLevanta/suppliers/<int:supp_ID>/accounts')
+@app.route('/PRSeLevanta/suppliers/<int:supp_ID>/accounts', methods=['GET','POST'])
 def getAccountsBySupp_ID(supp_ID):
-    return SuppliersHandler().getAccountsBySupp_ID(supp_ID)
+    if request.method == 'POST':
+        return AccountsHandler.insertAccount(supp_ID,request.form )
+    else:
+        return SuppliersHandler().getAccountsBySupp_ID(supp_ID)
 
 @app.route('/PRSeLevanta/SupplierSignUp')
 def SupplierForm():
@@ -74,16 +77,22 @@ def SupplierForm():
 
 
 #### Routes of Resources ####
-@app.route('/PRSeLevanta/resources')
+@app.route('/PRSeLevanta/resources' , methods=['GET','POST'])
 def getAllResources():
-     if not request.args:
-        return ResourcesHandler().getAllResources()
-     else:
-        return ResourcesHandler().searchResources(request.args)
+    if request.method == 'POST':
+        return ResourcesHandler().insertResources(request.form)
+    else:
+        if not request.args:
+            return ResourcesHandler().getAllResources()
+        else:
+            return ResourcesHandler().searchResources(request.args)
 
-@app.route('/PRSeLevanta/resources/<int:resourceID>')
-def getResourcesById(resourceID):
-    return ResourcesHandler().getResourcesById(resourceID)
+@app.route('/PRSeLevanta/resources/<int:resourceID>', methods = ['GET','PUT'])
+def getResourcesById(res_ID):
+    if request.method == 'PUT':
+        return ResourcesHandler().updateResource(res_ID,request.form)
+    else:
+        return ResourcesHandler().getResourcesById(res_ID)
 
 @app.route('/PRSeLevanta/resourcesavailable')
 def getResourcesAvailable():
@@ -103,9 +112,12 @@ def getResourcesInNeed():
 def getResourcesBySupplierId(supp_ID):
     return SuppliersHandler().getResourcesBySupplierId(supp_ID)
 
-@app.route('/PRSeLevanta/requested')
+@app.route('/PRSeLevanta/request' , methods=['GET','POST'])
 def getRequestedResources():
-    return ResourcesHandler().getRequestedResources()
+    if request.method=='POST':
+        return ResourcesHandler().insertRequest(request.form)
+    else:
+        return ResourcesHandler().getRequestedResources()
 
 @app.route('/PRSeLevanta/applicants/<int:apl_ID>/requested')
 def getResourcesRequestedByApplicantsId(apl_ID):
@@ -113,16 +125,22 @@ def getResourcesRequestedByApplicantsId(apl_ID):
 
 
 #### Routes of Transactions ####
-@app.route('/PRSeLevanta/transactions')
+@app.route('/PRSeLevanta/transactions', methods=['GET','POST'])
 def getAllTransactions():
-    if not request.args:
-        return TransactionsHandler().getAllTransactions()
+    if request.method == 'POST':
+        return TransactionsHandler().insertTransaction(request.form)
     else:
-        return TransactionsHandler().searchTransactions(request.args)
+        if not request.args:
+            return TransactionsHandler().getAllTransactions()
+        else:
+            return TransactionsHandler().searchTransactions(request.args)
 
-@app.route('/PRSeLevanta/transactions/<int:trans_ID>')
+@app.route('/PRSeLevanta/transactions/<int:trans_ID>',methods=['GET','PUT'])
 def getTransactionById(trans_ID):
-    return TransactionsHandler().getTransactionByID(trans_ID)
+    if request.method == 'PUT':
+        return TransactionsHandler().updateTransaction(trans_ID, request.form)
+    else:
+        return TransactionsHandler().getTransactionByID(trans_ID)
 
 @app.route('/PRSeLevanta/applicants/<int:apl_ID>/transactions')
 def getTransactionByApplicantsId(apl_ID):

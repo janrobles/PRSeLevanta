@@ -92,3 +92,37 @@ class transactionsDAO:
             result.append(row)
         return result
 
+    def insert(self, card_num, res_ID, trans_date, status):
+        rid = res_ID
+        cursor = self.conn.cursor()
+        query = "insert into Transactions(card_num,acct_num,trans_date,status,amount) values (%s,(select acct_num from Accounts where supp_ID=(select supp_ID from Resources natural inner join Supplies where res_ID=%s)),%s,%s,(select price from Resources where res_ID=%s))returning trans_ID;"
+        cursor.execute(query, (card_num,res_ID,trans_date,status,rid))
+        trans_ID = cursor.fetchone()[0]
+        self.conn.commit()
+        return trans_ID
+
+    def insertPurchase(self, res_ID, trans_ID):
+        rid = res_ID
+        cursor = self.conn.cursor()
+        query = "insert into Purchase(res_ID,trans_ID,pprice) values (%s,%s,(select price from Resources where res_ID=%s));"
+        cursor.execute(query, (res_ID,trans_ID,rid))
+        self.conn.commit()
+
+    def insertFulfill(self, trans_ID, res_ID):
+        cursor = self.conn.cursor()
+        query = "insert into Fulfill(trans_ID, supp_ID) values (%s,(select supp_ID from Resources natural inner join Supplies where res_ID=%s));"
+        cursor.execute(query, (trans_ID, res_ID))
+        self.conn.commit()
+
+    def insertOwns(self, trans_ID, res_ID):
+        cursor = self.conn.cursor()
+        query = "insert into Owns (trans_ID,apl_ID) values (%s,(select apl_ID from Resources natural inner join Request where res_ID =%s));"
+        cursor.execute(query, (trans_ID,res_ID))
+        self.conn.commit()
+
+    def updateTransaction(self, status, trans_ID):
+        cursor = self.conn.cursor()
+        query = "update Transactions set status=%s where trans_ID=%s;"
+        cursor.execute(query, (status, trans_ID))
+        self.conn.commit()
+

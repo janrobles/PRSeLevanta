@@ -169,4 +169,23 @@ class suppliersDAO:
         cursor.execute(query, (supp_ID, rcity,street,urb_conde,num,city,state,zip,gps_local))
         self.conn.commit()
 
+    def insertAccount(self, acct_num, supp_ID, balance):
+        cursor = self.conn.cursor()
+        query = "insert into Accounts(acct_num,supp_ID,balance) values (%s,%s,%s);"
+        cursor.execute(query,(acct_num,supp_ID,balance))
+        self.conn.commit()
+
+    def updateAccount(self,acct_num,balance):
+        cursor = self.conn.cursor()
+        query = "update Accounts set balance=%s where acct_num=%s;"
+        cursor.execute(query,(balance,acct_num))
+        self.conn.commit()
+
+    def getAccountByAcctNum(self, acct_num):
+        cursor =self.conn.cursor()
+        query = "select * from Accounts where acct_num=%s"
+        cursor.execute(query,(acct_num))
+        result = cursor.fetchone()
+        return result
+
   

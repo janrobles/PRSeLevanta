@@ -15,6 +15,15 @@ class TransactionsHandler:
         result['amount'] = row[5]
         return result
 
+    def build_transactions_attributes(self, trans_ID, card_num, res_ID, trans_date, status):
+        result={}
+        result['trans_ID']=trans_ID
+        result['card_num']=card_num
+        result['res_ID']= res_ID
+        result['trans_date']=trans_date
+        result['status']=status
+        return result
+
     def getAllTransactions(self):
         dao = transactionsDAO()
         transactions = dao.getAllTransactions()
@@ -77,3 +86,47 @@ class TransactionsHandler:
             result = self.build_transactions_dict(row)
             result_list.append(result)
         return jsonify(Transactions=result_list)
+
+    def insertTransaction(self, form):
+        if len(form) != 4:
+            return jsonify(Error = "Malform post request"),400
+        else:
+            card_num = form['card_num']
+            res_ID = form['res_ID']
+            trans_date = form['trans_date']
+            status = form['status']
+            if card_num and res_ID and trans_date and status:
+                dao = transactionsDAO()
+                trans_ID = dao.insert(card_num,res_ID,trans_date,status)
+                dao.insertPurchase(res_ID,trans_ID)
+                dao.insertOwns(trans_ID,res_ID)
+                dao.insertFulfill(trans_ID,res_ID)
+                result = self.build_transactions_attributes(trans_ID,card_num,res_ID, trans_date,status)
+                return jsonify(Transaction = result),201
+            else:
+                return jsonify(Error="Unexpected attributes in post request"), 400
+
+    def updateTransaction(self,trans_ID,form):
+        dao = transactionsDAO()
+        if not dao.getTransactionByTransID(trans_ID):
+            return jsonify(Error="Transaction not found"), 404
+        else:
+            if len(form) != 4:
+                return jsonify(Error="Malform update request"), 400
+            else:
+                trans_ID = form['trans_ID']
+                card_num = form['card_num']
+                acct_num = form['acct_num']
+                trans_date = form['trans_date']
+                status = form['status']
+                amount = form['amount']
+                if trans_ID and card_num and acct_num and trans_ID and trans_date and amount:
+                    dao.updateTransaction(status,trans_ID)
+                    result = self.build_transactions_attributes(trans_ID, card_num, acct_num, trans_date,status,amount)
+                    return jsonify(Transaction=result), 200
+                else:
+                    return jsonify(Error="Unexpected attributes in updates request"), 400
+
+
+
+

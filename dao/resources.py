@@ -162,6 +162,83 @@ class resourcesDAO:
             result.append(row)
         return result
 
+    def insert(self, category, price, qty):
+        cursor = self.conn.cursor()
+        query = "insert into Resources(category, price, qty) values (%s, %s, %s) returning res_ID"
+        cursor.execute(query,(category, price, qty))
+        res_ID = cursor.fetchone()[0]
+        self.conn.commit
+        return res_ID
+
+    def insertFood(self, res_ID, kind):
+        cursor = self.conn.cursor()
+        query = "insert into Food(res_ID, kind) values (%s, %s);"
+        cursor.execute(query,(res_ID, kind))
+        self.conn.commit
+
+    def insertClothing(self, res_ID, size, gender):
+        cursor = self.conn.cursor()
+        query = "insert into Clothing(res_ID, size, gender) values (%s,%s,%s);"
+        cursor.execute(query,(res_ID, size, gender))
+        self.conn.commit
+
+    def insertSupplies(self, res_ID, supp_ID):
+        cursor = self.conn.cursor()
+        query = "insert into Supplies(res_ID,supp_ID) values (%s,%s);"
+        cursor.execute(query,(res_ID,supp_ID))
+        self.conn.commit
+
+    def insertPgenerator(self, res_ID, watts):
+        cursor = self.conn.cursor()
+        query = "insert into PowerGenerator(ress_ID,watts) values (%s,%s);"
+        cursor.execute(query,(res_ID,watts))
+        self.conn.commit
+
+    def insertBatteries(self, res_ID, kind):
+        cursor = self.conn.cursor()
+        query = "insert into Batteries(ress_ID,kind) values (%s,%s);"
+        cursor.execute(query, (res_ID, kind))
+        self.conn.commit
+
+    def insertMedication(self, res_ID, dosis):
+        cursor = self.conn.cursor()
+        query = "insert into Medication(ress_ID,dosis) values (%s,%s);"
+        cursor.execute(query, (res_ID, dosis))
+        self.conn.commit
+
+    def insertIce(self, res_ID, size):
+        cursor = self.conn.cursor()
+        query = "insert into Ice(res_ID,size) values (%s,%s);"
+        cursor.execute(query, (res_ID, size))
+        self.conn.commit
+
+    def insertFuel(self, res_ID, kind, size):
+        cursor = self.conn.cursor()
+        query = "insert into Fuel(res_ID,kind,size) values (%s,%s,%s);"
+        cursor.execute(query, (res_ID, kind,size))
+        self.conn.commit
+
+    def insertWater(self, res_ID, size):
+        cursor = self.conn.cursor()
+        query = "insert into Watwe(res_ID,size) values (%s,%s);"
+        cursor.execute(query, (res_ID, size))
+        self.conn.commit
+
+    def updateResource(self, price, qty, res_ID):
+        cursor = self.conn.cursor()
+        query = "update Resources set price=%s, qty=%s where res_ID=%s;"
+        cursor.execute(query, (price, qty, res_ID))
+        self.conn.commit()
+
+    def insertRequest(self, apl_ID, res_ID):
+        cursor = self.conn.cursor()
+        query = "insert into Request(apl_ID, res_ID) values (%s, %s);"
+        cursor.execute(query, (apl_ID, res_ID))
+        self.conn.commit
+
+
+
+
 
 
 

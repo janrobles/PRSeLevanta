@@ -49,14 +49,18 @@ class applicantsDAO:
         cursor = self.conn.cursor()
         query = "select * from applicants where first_name = %s;"
         cursor.execute(query, (first_name,))
-        result = cursor.fetchone()
+        result = []
+        for row in cursor:
+            result.append(row)
         return result
 
     def getApplicantByCity(self, city):
         cursor = self.conn.cursor()
         query = "select apl_ID, first_name, last_name from applicants natural inner join applicantsaddress where city = %s;"
         cursor.execute(query, (city,))
-        result = cursor.fetchone()
+        result = []
+        for row in cursor:
+            result.append(row)
         return result
 
     def getApplicantsByRegion(self, region):
@@ -126,7 +130,9 @@ class applicantsDAO:
         cursor = self.conn.cursor()
         query = "select apl_ID, first_name, last_name, card_num, exp_date, balance from creditcards natural inner join applicants where apl_ID=%s;"
         cursor.execute(query, (apl_ID,))
-        result = cursor.fetchone()
+        result = []
+        for row in cursor:
+            result.append(row)
         return result
 
     def insert(self, first_name, last_name):
@@ -144,6 +150,25 @@ class applicantsDAO:
                 "(%s, (select rid from Region where city = %s),%s,%s,%s,%s,%s,%s,%s);"
         cursor.execute(query, (apl_ID, rcity,street,urb_conde,num,city,state,zip,gps_local))
         self.conn.commit()
+
+    def insertCreditCard(self, card_num, apl_ID, exp_date, balance):
+        cursor = self.conn.cursor()
+        query = "insert into CreditCards(card_num,apl_ID, exp_date, balance) values (%s,%s,%s,%s);"
+        cursor.execute(query, (card_num, apl_ID, exp_date, balance))
+        self.conn.commit()
+
+    def updateCreditCard(self,card_num,exp_date,balance):
+        cursor = self.conn.cursor()
+        query = "update CreditCards set exp_date=%s, balance=%s where card_num=%s;"
+        cursor.execute(query,(exp_date,balance,card_num))
+        self.conn.commit()
+
+    def getCreditCardByCardNum(self, card_num):
+        cursor =self.conn.cursor()
+        query = "select * from CreditCards where card_num=%s"
+        cursor.execute(query,(card_num))
+        result = cursor.fetchone()
+        return result
 
 
 
