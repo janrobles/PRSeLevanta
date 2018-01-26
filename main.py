@@ -56,17 +56,23 @@ def ApplicantForm():
 ##### Routes of Suppliers  #####
 @app.route('/PRSeLevanta/suppliers', methods=['GET','POST'])
 def getAllSuppliers():
-    if request.method == 'POST':
-        return SuppliersHandler().insertSuppliers(request.form)
-    else:
-        if not request.args:
-            return SuppliersHandler().getAllSuppliersInfo()
-        else:
-            return SuppliersHandler().searchSuppliers(request.args)
-
+    # if request.method == 'POST':
+    #      SuppliersHandler().insertSuppliers(request.form)
+    #      #return render_template('supplier.html')
+    # else:
+    #     if not request.args:
+    #         return SuppliersHandler().getAllSuppliersInfo()
+    #     else:
+    #         return SuppliersHandler().searchSuppliers(request.args)
+    return render_template('supplier.html')
 @app.route('/PRSeLevanta/suppliers/<int:supp_ID>')
 def getSupplierById(supp_ID):
     return SuppliersHandler().getSuppliersById(supp_ID)
+
+@app.route('/PRSeLevanta/suppliers/<first_name>')
+def hello(first_name = None):
+    return render_template('supplier.html', first_name=first_name)
+
 
 @app.route('/PRSeLevanta/resources/<int:resourceID>/suppliers')
 def getSuppliersByResourceId(resourceID):
@@ -131,9 +137,48 @@ def getRequestedResources():
     else:
         return ResourcesHandler().getRequestedResources()
 
+
+
 @app.route('/PRSeLevanta/applicants/<int:apl_ID>/requested')
 def getResourcesRequestedByApplicantsId(apl_ID):
     return ResourcesHandler().getResourcesRequestedByApplicantID(apl_ID)
+
+@app.route('/PRSeLevanta/AddFood')
+def AddFood():
+    return render_template('foodRes.html')
+
+@app.route('/PRSeLevanta/AddClothing')
+def AddClothing():
+    return render_template('clothingRes.html')
+
+@app.route('/PRSeLevanta/AddMedication')
+def AddMedication():
+    return render_template('medicationRes.html')
+
+@app.route('/PRSeLevanta/AddFuel')
+def AddFuel():
+    return render_template('fuelRes.html')
+
+@app.route('/PRSeLevanta/AddWater')
+def AddWater():
+    return render_template('waterRes.html')
+
+@app.route('/PRSeLevanta/AddIce')
+def AddIce():
+    return render_template('iceRes.html')
+
+@app.route('/PRSeLevanta/AddPowerGenerator')
+def AddPowerGenerators():
+    return render_template('generatorRes.html')
+
+@app.route('/PRSeLevanta/AddBatteries')
+def AddBatteries():
+    return render_template('batteriesRes.html')
+
+
+
+
+
 
 
 #### Routes of Transactions ####

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Applicant info</h1>
+<p>Here is everything!</p><br>
+
+<!-- ALL RESOURCES-->
+<b>All resources</b><br>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td>Ropa</td>
+    <td>250</td>
+    <td>$10</td>
+  </tr>
+  <tr>
+    <td>Comida</td>
+    <td>100</td>
+    <td>$0.50</td>
+  </tr>
+  <tr>
+    <td>Medicamentos</td>
+    <td>50</td>
+    <td>$3.75</td>
+  </tr>
+  <tr>
+    <td>Gasolina</td>
+    <td>100</td>
+    <td>$0.72</td>
+  </tr>
+  <tr>
+    <td>Agua</td>
+    <td>200</td>
+    <td>$0.00</td>
+  </tr>
+
+</table>
+
+
+<!--END OF ALL RESOURCES-->
+
+<br>
+<b>Request resource</b><br>
+<select>
+  <option value="agua">Agua</option>
+  <option value="gas">Gasolina</option>
+  <option value="medx">Medicamentos</option>
+  <option value="ropa">Ropa</option>
+</select><br><br>
+<button type="button" onclick="alert('Resource requested!')">Request!</button>
+<br><br>
+
+<br><b>Buy resource</b><br>
+<select>
+  <option value="food">Comida</option>
+  <option value="gas">Gasolina</option>
+  <option value="medx">Medicamentos</option>
+  <option value="ropa">Ropa</option>
+</select><br><br>
+<button type="button" onclick="alert('Resource purchased!')">Buy!</button>
+
+</body>
+</html>

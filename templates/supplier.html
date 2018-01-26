@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+{%if first_name%}
+<h1>Hi {{first_name}}</h1>
+{%else%}
+<h1>Supplier</h1>
+{%endif%}
+
+<p>We are very proud having people like you! Thanks!!</p>
+<p2>View your transactions</p2>
+<form action="/PRSeLevanta/ViewTrans">
+    <input type="submit" value="Transactions" />
+</form>
+<br>
+
+<p3>Change Bank Account</p3>
+<form action="/PRSeLevanta/ViewTrans">
+    <input type="submit" value="Change" />
+</form>
+
+<br>
+<p4>These are available categories for new resources</p4><br><br>
+<b>To donate provide a resource click picture below</b><br><br>
+
+<a href="/PRSeLevanta/AddFood" > <img src="http://www.bncoupon.com/CGP/Food-Icon.png"> </a>
+<a href="/PRSeLevanta/AddClothing" > <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/552721-200.png"> </a>
+<a href="/PRSeLevanta/AddMedication" > <img src="http://www.rxwiki.com/sites/all/themes/tseven/images/mobile-icon-medications.png"> </a>
+<a href="/PRSeLevanta/AddFuel" > <img src="https://marketplace.canva.com/MAB7lCdKt1A/1/thumbnail/canva-fuel-oil-can-icon-vector-illustration-MAB7lCdKt1A.png"> </a><br><br>
+<a href="/PRSeLevanta/AddWater" > <img src="http://www.freepngimg.com/thumb/water_bottle/2-2-water-bottle-free-download-png-thumb.png"> </a>
+<a href="/PRSeLevanta/AddIce" > <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk-1UgzHUQ0ZA-R8QQ_ApiO3CgNzssA2F9dNFCD06yS-Rv7f0zpQ"> </a>
+<a href="/PRSeLevanta/AddPowerGenerator" > <img src="https://i.ebayimg.com/thumbs/images/g/3WUAAOSw88xaNHUf/s-l200.jpg"> </a>
+<a href="/PRSeLevanta/AddBatteries" > <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/187461-200.png"> </a>
+
+
+
+
+
+
+
+
+
+
+
+<!--<form onclick="Resource submitted">-->
+  <!--Name:<br>-->
+  <!--<input type="text" name="name">-->
+  <!--<br>-->
+    <!--Category:<br>-->
+  <!--<input type="text" name="category">-->
+  <!--<br>-->
+  <!--Quantity:<br>-->
+  <!--<input type="number" name="qty">-->
+  <!--<br>-->
+    <!--Price:<br>-->
+  <!--<input type="text" name="price">-->
+  <!--<br><br>-->
+  <!--<input type="submit" onclick="alert('Resource added!')" value="Submit">-->
+  <!--<button> type="button" onclick="alert('Resource requested!')">Request!</button>-->
+</form>
+
+</body>
+</html>
