@@ -128,7 +128,7 @@ class resourcesDAO:
 
     def getRequestedResources(self):
         cursor = self.conn.cursor()
-        query = "select res_ID, category, price, qty from resources natural inner join request;"
+        query = "select res_ID, apl_ID, category, price, qty from resources natural inner join request;"
         cursor.execute(query)
         result = []
         for row in cursor:
@@ -232,10 +232,11 @@ class resourcesDAO:
 
     def insertRequest(self, apl_ID, res_ID):
         cursor = self.conn.cursor()
-        query = "insert into Request(apl_ID, res_ID) values (%s, %s);"
+        query = "insert into Request(apl_ID, res_ID) values (%s, %s) returning req_ID;"
         cursor.execute(query, (apl_ID, res_ID))
-        self.conn.commit
-
+        req_ID = cursor.fetchone()[0]
+        self.conn.commit()
+        return req_ID
 
 
 

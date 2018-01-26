@@ -21,12 +21,24 @@ def greeting():
 @app.route('/PRSeLevanta/applicants', methods=['GET','POST'])
 def getAllApplicants():
     if request.method == 'POST':
-        return ApplicantsHandler().insertApplicants(request.form)
+        ApplicantsHandler().insertApplicants(request.form)
+        return render_template('')
     else:
         if not request.args:
             return ApplicantsHandler().getAllApplicantsInfo()
         else:
             return ApplicantsHandler().searchApplicants(request.args)
+
+# @app.route('/PRSeLevanta/applicants/<first_name>', methods=['GET','POST'])
+# def getAllApplicants():
+#     if request.method == 'POST':
+#          ApplicantsHandler().insertApplicants(request.form)
+#
+#     else:
+#         if not request.args:
+#             return ApplicantsHandler().getAllApplicantsInfo()
+#         else:
+#             return ApplicantsHandler().searchApplicants(request.args)
 
 @app.route('/PRSeLevanta/applicants/<int:apl_ID>')
 def getApplicantById(apl_ID):
@@ -67,7 +79,7 @@ def getSuppliersByResourceCategory(category):
 @app.route('/PRSeLevanta/suppliers/<int:supp_ID>/accounts', methods=['GET','POST'])
 def getAccountsBySupp_ID(supp_ID):
     if request.method == 'POST':
-        return AccountsHandler.insertAccount(supp_ID,request.form )
+        return AccountsHandler.insertAccount(supp_ID,request.form)
     else:
         return SuppliersHandler().getAccountsBySupp_ID(supp_ID)
 
@@ -87,7 +99,7 @@ def getAllResources():
         else:
             return ResourcesHandler().searchResources(request.args)
 
-@app.route('/PRSeLevanta/resources/<int:resourceID>', methods = ['GET','PUT'])
+@app.route('/PRSeLevanta/resources/<int:res_ID>', methods = ['GET','PUT'])
 def getResourcesById(res_ID):
     if request.method == 'PUT':
         return ResourcesHandler().updateResource(res_ID,request.form)

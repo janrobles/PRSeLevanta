@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2b6ee11b-c562-4154-ad14-e852bcc74174" name="Default" comment="applicants dao">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/dao/applicants.py" afterPath="$PROJECT_DIR$/dao/applicants.py" />
       <change beforePath="$PROJECT_DIR$/dao/resources.py" afterPath="$PROJECT_DIR$/dao/resources.py" />
-      <change beforePath="$PROJECT_DIR$/dao/suppliers.py" afterPath="$PROJECT_DIR$/dao/suppliers.py" />
-      <change beforePath="$PROJECT_DIR$/dao/transactions.py" afterPath="$PROJECT_DIR$/dao/transactions.py" />
-      <change beforePath="$PROJECT_DIR$/handler/accounts.py" afterPath="$PROJECT_DIR$/handler/accounts.py" />
-      <change beforePath="$PROJECT_DIR$/handler/creditcards.py" afterPath="$PROJECT_DIR$/handler/creditcards.py" />
       <change beforePath="$PROJECT_DIR$/handler/resources.py" afterPath="$PROJECT_DIR$/handler/resources.py" />
-      <change beforePath="$PROJECT_DIR$/handler/transactions.py" afterPath="$PROJECT_DIR$/handler/transactions.py" />
       <change beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
     </list>
     <ignored path="PRSeLevanta.iws" />
@@ -23,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/PRSeLevanta$main.coverage" NAME="main Coverage Results" MODIFIED="1516946915844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PRSeLevanta$main.coverage" NAME="main Coverage Results" MODIFIED="1516988932876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -36,55 +30,10 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="637">
-              <caret line="114" column="44" lean-forward="false" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
+            <state relative-caret-position="270">
+              <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
               <folding>
                 <element signature="e#45#102#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="suppliers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dao/suppliers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="174" column="54" lean-forward="false" selection-start-line="174" selection-start-column="54" selection-end-line="174" selection-end-column="54" />
-              <folding>
-                <marker date="1516946887834" expanded="true" signature="502:525" ph="select * fro... suppliers" />
-                <marker date="1516946887834" expanded="true" signature="750:780" ph="select * fro... suppliersaddress" />
-                <marker date="1516946887834" expanded="true" signature="1001:1166" ph="select supp_... suppliers" />
-                <marker date="1516946887834" expanded="true" signature="1393:1435" ph="select * fro... suppliers" />
-                <marker date="1516946887834" expanded="true" signature="1637:1682" ph="select * fro... suppliers" />
-                <marker date="1516946887834" expanded="true" signature="1924:2028" ph="select supp_... suppliers" />
-                <marker date="1516946887834" expanded="true" signature="2268:2400" ph="select supp_... suppliers" />
-                <marker date="1516946887834" expanded="true" signature="2666:2795" ph="select supp_... suppliers" />
-                <marker date="1516946887834" expanded="true" signature="3105:3305" ph="select supp_... suppliers" />
-                <marker date="1516946887834" expanded="true" signature="3597:3706" ph="select supp_... suppliers" />
-                <marker date="1516946887834" expanded="true" signature="3986:4166" ph="select supp_... suppliers" />
-                <marker date="1516946887834" expanded="true" signature="4465:4557" ph="select supp_... suppliers" />
-                <marker date="1516946887834" expanded="true" signature="4817:4933" ph="select supp_... accounts" />
-                <marker date="1516946887834" expanded="true" signature="5182:5277" ph="select res_I... resources" />
-                <marker date="1516946887834" expanded="true" signature="5532:5659" ph="select supp_... supplies" />
-                <marker date="1516946887834" expanded="true" signature="5922:6067" ph="select supp_... suppliers" />
-                <marker date="1516946887834" expanded="true" signature="6320:6396" ph="insert into Suppliers... " />
-                <marker date="1516946887834" expanded="true" signature="6705:6891" ph="insert into SuppliersAddress... " />
-                <marker date="1516946887834" expanded="true" signature="6830:6868" ph="select rid f... Region" />
-                <marker date="1516946887834" expanded="true" signature="7126:7190" ph="insert into Accounts... " />
-                <marker date="1516946887834" expanded="true" signature="7377:7425" ph="update Accounts... " />
-                <marker date="1516946887834" expanded="true" signature="7602:7642" ph="select * fro... Accounts" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="accounts.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/handler/accounts.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-77">
-              <caret line="56" column="25" lean-forward="false" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
-              <folding>
-                <element signature="e#25#48#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,12 +72,12 @@
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/dao/applicants.py" />
         <option value="$PROJECT_DIR$/dao/suppliers.py" />
-        <option value="$PROJECT_DIR$/dao/resources.py" />
-        <option value="$PROJECT_DIR$/handler/resources.py" />
         <option value="$PROJECT_DIR$/handler/transactions.py" />
         <option value="$PROJECT_DIR$/handler/creditcards.py" />
         <option value="$PROJECT_DIR$/dao/transactions.py" />
         <option value="$PROJECT_DIR$/handler/accounts.py" />
+        <option value="$PROJECT_DIR$/dao/resources.py" />
+        <option value="$PROJECT_DIR$/handler/resources.py" />
         <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
@@ -139,7 +88,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="65" />
     <option name="y" value="32" />
     <option name="width" value="1375" />
@@ -164,8 +113,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,6 +139,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -428,13 +377,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="32" width="1375" height="848" extended-state="0" />
+    <frame x="65" y="32" width="1375" height="848" extended-state="1" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0952381" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32884097" sideWeight="0.5" order="13" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.067911714" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31940702" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31940702" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293718" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16290909" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -747,72 +697,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/handler/resources.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="394" column="28" lean-forward="false" selection-start-line="394" selection-start-column="28" selection-end-line="394" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/resources.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="235" column="45" lean-forward="false" selection-start-line="235" selection-start-column="45" selection-end-line="235" selection-end-column="45" />
-          <folding>
-            <marker date="1516946886394" expanded="true" signature="502:525" ph="select * fro... resources" />
-            <marker date="1516946886394" expanded="true" signature="751:792" ph="select * fro... resources" />
-            <marker date="1516946886394" expanded="true" signature="997:1093" ph="select res_I... resources" />
-            <marker date="1516946886394" expanded="true" signature="1325:1427" ph="select * fro... resources" />
-            <marker date="1516946886394" expanded="true" signature="1674:1797" ph="select res_I... resources" />
-            <marker date="1516946886394" expanded="true" signature="2069:2103" ph="select * fro... resources" />
-            <marker date="1516946886394" expanded="true" signature="2069:2107" ph="select * fro... resources" />
-            <marker date="1516946886394" expanded="true" signature="2339:2376" ph="select * fro... resources" />
-            <marker date="1516946886394" expanded="true" signature="2627:2685" ph="select * fro... resources" />
-            <marker date="1516946886394" expanded="true" signature="2933:2976" ph="select * fro... resources" />
-            <marker date="1516946886394" expanded="true" signature="3220:3378" ph="select res_I... resources" />
-            <marker date="1516946886394" expanded="true" signature="3641:3818" ph="select res_I... resources" />
-            <marker date="1516946886394" expanded="true" signature="4073:4203" ph="select res_I... resources" />
-            <marker date="1516946886394" expanded="true" signature="4443:4601" ph="select res_I... resources" />
-            <marker date="1516946886394" expanded="true" signature="4800:4870" ph="select res_I... resources" />
-            <marker date="1516946886394" expanded="true" signature="4800:4877" ph="select res_I... resources" />
-            <marker date="1516946886394" expanded="true" signature="5122:5217" ph="select res_I... resources" />
-            <marker date="1516946886394" expanded="true" signature="5456:5506" ph="select res_I... resources" />
-            <marker date="1516946886394" expanded="true" signature="5752:5831" ph="select res_I... resources" />
-            <marker date="1516946886394" expanded="true" signature="6077:6140" ph="insert into Resources... " />
-            <marker date="1516946886394" expanded="true" signature="6077:6157" ph="insert into Resources... " />
-            <marker date="1516946886394" expanded="true" signature="6391:6437" ph="insert into Food... " />
-            <marker date="1516946886394" expanded="true" signature="6616:6676" ph="insert into Clothing... " />
-            <marker date="1516946886394" expanded="true" signature="6858:6909" ph="insert into Supplies... " />
-            <marker date="1516946886394" expanded="true" signature="7085:7141" ph="insert into PowerGenerator... " />
-            <marker date="1516946886394" expanded="true" signature="7313:7363" ph="insert into Batteries... " />
-            <marker date="1516946886394" expanded="true" signature="7538:7590" ph="insert into Medication... " />
-            <marker date="1516946886394" expanded="true" signature="7758:7801" ph="insert into Ice... " />
-            <marker date="1516946886394" expanded="true" signature="7975:8027" ph="insert into Fuel... " />
-            <marker date="1516946886394" expanded="true" signature="8201:8246" ph="insert into Watwe... " />
-            <marker date="1516946886394" expanded="true" signature="8424:8477" ph="update Resources... " />
-            <marker date="1516946886394" expanded="true" signature="8658:8709" ph="insert into Request... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/handler/creditcards.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="91" column="67" lean-forward="true" selection-start-line="91" selection-start-column="67" selection-end-line="91" selection-end-column="67" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/handler/transactions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="123" column="41" lean-forward="false" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="41" />
-          <folding>
-            <element signature="e#25#48#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -820,59 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
           <caret line="160" column="6" lean-forward="false" selection-start-line="160" selection-start-column="6" selection-end-line="163" selection-end-column="26" />
-          <folding>
-            <marker date="1516946887374" expanded="true" signature="504:528" ph="select * fro... applicants" />
-            <marker date="1516946887374" expanded="true" signature="754:785" ph="select * fro... applicantsaddress" />
-            <marker date="1516946887374" expanded="true" signature="1007:1173" ph="select apl_I... applicants" />
-            <marker date="1516946887374" expanded="true" signature="1399:1441" ph="select * fro... applicants" />
-            <marker date="1516946887374" expanded="true" signature="1642:1688" ph="select * fro... applicants" />
-            <marker date="1516946887374" expanded="true" signature="1930:2035" ph="select apl_I... applicants" />
-            <marker date="1516946887374" expanded="true" signature="2276:2409" ph="select apl_I... applicants" />
-            <marker date="1516946887374" expanded="true" signature="2676:2806" ph="select apl_I... applicants" />
-            <marker date="1516946887374" expanded="true" signature="3082:3235" ph="select apl_I... applicants" />
-            <marker date="1516946887374" expanded="true" signature="3543:3744" ph="select apl_I... applicants" />
-            <marker date="1516946887374" expanded="true" signature="4037:4147" ph="select apl_I... applicants" />
-            <marker date="1516946887374" expanded="true" signature="4428:4609" ph="select apl_I... applicants" />
-            <marker date="1516946887374" expanded="true" signature="4909:4999" ph="select apl_I... applicants" />
-            <marker date="1516946887374" expanded="true" signature="5263:5391" ph="select apl_I... creditcards" />
-            <marker date="1516946887374" expanded="true" signature="5634:5710" ph="insert into Applicants... " />
-            <marker date="1516946887374" expanded="true" signature="6016:6202" ph="insert into ApplicantsAddress... " />
-            <marker date="1516946887374" expanded="true" signature="6141:6179" ph="select rid f... Region" />
-            <marker date="1516946887374" expanded="true" signature="6448:6528" ph="insert into CreditCards... " />
-            <marker date="1516946887374" expanded="true" signature="6739:6761" ph="update CreditCards... " />
-            <marker date="1516946887374" expanded="true" signature="6739:6803" ph="update CreditCards... " />
-            <marker date="1516946887374" expanded="true" signature="6992:7035" ph="select * fro... CreditCards" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao/transactions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="125" column="47" lean-forward="false" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
-          <folding>
-            <marker date="1516946887162" expanded="true" signature="508:534" ph="select * fro... transactions" />
-            <marker date="1516946887162" expanded="true" signature="774:902" ph="select trans... transactions" />
-            <marker date="1516946887162" expanded="true" signature="1153:1281" ph="select trans... transactions" />
-            <marker date="1516946887162" expanded="true" signature="1525:1567" ph="select * fro... transactions" />
-            <marker date="1516946887162" expanded="true" signature="1831:1977" ph="select trans... transactions" />
-            <marker date="1516946887162" expanded="true" signature="2246:2392" ph="select trans... transactions" />
-            <marker date="1516946887162" expanded="true" signature="2636:2682" ph="select * fro... transactions" />
-            <marker date="1516946887162" expanded="true" signature="2948:3089" ph="select trans... transactions" />
-            <marker date="1516946887162" expanded="true" signature="3363:3505" ph="select trans... transactions" />
-            <marker date="1516946887162" expanded="true" signature="3792:3913" ph="insert into Transactions... " />
-            <marker date="1516946887162" expanded="true" signature="3792:4064" ph="insert into Transactions... " />
-            <marker date="1516946887162" expanded="true" signature="3918:3991" ph="select supp_... Resources" />
-            <marker date="1516946887162" expanded="true" signature="4001:4044" ph="select price... Resources" />
-            <marker date="1516946887162" expanded="true" signature="4352:4457" ph="insert into Purchase... " />
-            <marker date="1516946887162" expanded="true" signature="4412:4455" ph="select price... Resources" />
-            <marker date="1516946887162" expanded="true" signature="4641:4759" ph="insert into Fulfill... " />
-            <marker date="1516946887162" expanded="true" signature="4641:4765" ph="insert into Fulfill... " />
-            <marker date="1516946887162" expanded="true" signature="4641:4767" ph="insert into Fulfill... " />
-            <marker date="1516946887162" expanded="true" signature="4945:5066" ph="insert into Owns... " />
-            <marker date="1516946887162" expanded="true" signature="4992:5064" ph="select apl_I... Resources" />
-            <marker date="1516946887162" expanded="true" signature="5250:5301" ph="update TRANSACTION... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -894,7 +729,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dao/suppliers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
+        <state relative-caret-position="3114">
           <caret line="174" column="54" lean-forward="false" selection-start-line="174" selection-start-column="54" selection-end-line="174" selection-end-column="54" />
           <folding>
             <marker date="1516946887834" expanded="true" signature="502:525" ph="select * fro... suppliers" />
@@ -925,18 +760,105 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/handler/accounts.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-77">
+        <state relative-caret-position="972">
           <caret line="56" column="25" lean-forward="false" selection-start-line="56" selection-start-column="25" selection-end-line="56" selection-end-column="25" />
           <folding>
-            <element signature="e#25#48#0" expanded="true" />
+            <element signature="e#25#48#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/resources.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1069">
+          <caret line="135" column="21" lean-forward="true" selection-start-line="135" selection-start-column="21" selection-end-line="135" selection-end-column="21" />
+          <folding>
+            <marker date="1516986120021" expanded="true" signature="502:525" ph="select * fro... resources" />
+            <marker date="1516986120021" expanded="true" signature="751:792" ph="select * fro... resources" />
+            <marker date="1516986120021" expanded="true" signature="997:1093" ph="select res_I... resources" />
+            <marker date="1516986120021" expanded="true" signature="1325:1427" ph="select * fro... resources" />
+            <marker date="1516986120021" expanded="true" signature="1674:1797" ph="select res_I... resources" />
+            <marker date="1516986120021" expanded="true" signature="2069:2103" ph="select * fro... resources" />
+            <marker date="1516986120021" expanded="true" signature="2069:2107" ph="select * fro... resources" />
+            <marker date="1516986120021" expanded="true" signature="2339:2376" ph="select * fro... resources" />
+            <marker date="1516986120021" expanded="true" signature="2627:2685" ph="select * fro... resources" />
+            <marker date="1516986120021" expanded="true" signature="2933:2976" ph="select * fro... resources" />
+            <marker date="1516986120021" expanded="true" signature="3220:3378" ph="select res_I... resources" />
+            <marker date="1516986120021" expanded="true" signature="3641:3818" ph="select res_I... resources" />
+            <marker date="1516986120021" expanded="true" signature="4073:4203" ph="select res_I... resources" />
+            <marker date="1516986120021" expanded="true" signature="4443:4601" ph="select res_I... resources" />
+            <marker date="1516986120021" expanded="true" signature="4800:4878" ph="select res_I... resources" />
+            <marker date="1516986120021" expanded="true" signature="4800:4885" ph="select res_I... resources" />
+            <marker date="1516986120021" expanded="true" signature="5130:5225" ph="select res_I... resources" />
+            <marker date="1516986120021" expanded="true" signature="5464:5514" ph="select res_I... resources" />
+            <marker date="1516986120021" expanded="true" signature="5760:5839" ph="select res_I... resources" />
+            <marker date="1516986120021" expanded="true" signature="6085:6148" ph="insert into Resources... " />
+            <marker date="1516986120021" expanded="true" signature="6085:6165" ph="insert into Resources... " />
+            <marker date="1516986120021" expanded="true" signature="6399:6445" ph="insert into Food... " />
+            <marker date="1516986120021" expanded="true" signature="6624:6684" ph="insert into Clothing... " />
+            <marker date="1516986120021" expanded="true" signature="6866:6917" ph="insert into Supplies... " />
+            <marker date="1516986120021" expanded="true" signature="7093:7149" ph="insert into PowerGenerator... " />
+            <marker date="1516986120021" expanded="true" signature="7321:7371" ph="insert into Batteries... " />
+            <marker date="1516986120021" expanded="true" signature="7546:7598" ph="insert into Medication... " />
+            <marker date="1516986120021" expanded="true" signature="7766:7809" ph="insert into Ice... " />
+            <marker date="1516986120021" expanded="true" signature="7983:8035" ph="insert into Fuel... " />
+            <marker date="1516986120021" expanded="true" signature="8209:8254" ph="insert into Watwe... " />
+            <marker date="1516986120021" expanded="true" signature="8432:8485" ph="update Resources... " />
+            <marker date="1516986120021" expanded="true" signature="8666:8717" ph="insert into Request... " />
+            <marker date="1516986120021" expanded="true" signature="8666:8734" ph="insert into Request... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handler/resources.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="214" column="0" lean-forward="true" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/handler/transactions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="123" column="41" lean-forward="false" selection-start-line="123" selection-start-column="24" selection-end-line="123" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/transactions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2232">
+          <caret line="125" column="47" lean-forward="false" selection-start-line="125" selection-start-column="47" selection-end-line="125" selection-end-column="47" />
+          <folding>
+            <marker date="1516946887162" expanded="true" signature="508:534" ph="select * fro... transactions" />
+            <marker date="1516946887162" expanded="true" signature="774:902" ph="select trans... transactions" />
+            <marker date="1516946887162" expanded="true" signature="1153:1281" ph="select trans... transactions" />
+            <marker date="1516946887162" expanded="true" signature="1525:1567" ph="select * fro... transactions" />
+            <marker date="1516946887162" expanded="true" signature="1831:1977" ph="select trans... transactions" />
+            <marker date="1516946887162" expanded="true" signature="2246:2392" ph="select trans... transactions" />
+            <marker date="1516946887162" expanded="true" signature="2636:2682" ph="select * fro... transactions" />
+            <marker date="1516946887162" expanded="true" signature="2948:3089" ph="select trans... transactions" />
+            <marker date="1516946887162" expanded="true" signature="3363:3505" ph="select trans... transactions" />
+            <marker date="1516946887162" expanded="true" signature="3792:4064" ph="insert into Transactions... " />
+            <marker date="1516946887162" expanded="true" signature="3873:3992" ph="select acct_... Accounts" />
+            <marker date="1516946887162" expanded="true" signature="3918:3991" ph="select supp_... Resources" />
+            <marker date="1516946887162" expanded="true" signature="4001:4044" ph="select price... Resources" />
+            <marker date="1516946887162" expanded="true" signature="4352:4457" ph="insert into Purchase... " />
+            <marker date="1516946887162" expanded="true" signature="4412:4455" ph="select price... Resources" />
+            <marker date="1516946887162" expanded="true" signature="4641:4767" ph="insert into Fulfill... " />
+            <marker date="1516946887162" expanded="true" signature="4692:4765" ph="select supp_... Resources" />
+            <marker date="1516946887162" expanded="true" signature="4945:5066" ph="insert into Owns... " />
+            <marker date="1516946887162" expanded="true" signature="4992:5064" ph="select apl_I... Resources" />
+            <marker date="1516946887162" expanded="true" signature="5250:5301" ph="update Transactions... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="637">
-          <caret line="114" column="44" lean-forward="false" selection-start-line="114" selection-start-column="44" selection-end-line="114" selection-end-column="44" />
+        <state relative-caret-position="270">
+          <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
           <folding>
             <element signature="e#45#102#0" expanded="true" />
           </folding>

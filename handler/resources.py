@@ -14,8 +14,18 @@ class ResourcesHandler:
         result['qty'] = row[3]
         return result
 
-    def build_request_attributes(self, apl_ID, res_ID):
+    def build_resourcesrequested_dict(self, row):
         result = {}
+        result['res_ID'] = row[0]
+        result['apl_ID'] = row[1]
+        result['category'] = row[2]
+        result['price'] = row[3]
+        result['qty'] = row[4]
+        return result
+
+    def build_request_attributes(self, req_ID,apl_ID, res_ID):
+        result = {}
+        result['req_ID'] = req_ID
         result['apl_ID'] = apl_ID
         result['res_ID'] = res_ID
         return result
@@ -235,7 +245,7 @@ class ResourcesHandler:
         requests_list = requests
         result_list = []
         for row in requests:
-            result = self.build_resources_dict(row)
+            result = self.build_resourcesrequested_dict(row)
             result_list.append(result)
         return jsonify(Requests = result_list)
 
@@ -400,8 +410,8 @@ class ResourcesHandler:
             res_ID = form['res_ID']
             if apl_ID and res_ID:
                 dao = resourcesDAO()
-                dao.insertRequest(apl_ID, res_ID)
-                result = self.build_request_attributes(apl_ID, res_ID)
+                req_ID =dao.insertRequest(apl_ID, res_ID)
+                result = self.build_request_attributes(req_ID,apl_ID, res_ID)
                 return jsonify(Request=result), 201
             else:
                 return jsonify(Error="Unexpected attributes in post request"), 400
